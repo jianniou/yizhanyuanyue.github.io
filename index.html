@@ -1,1 +1,292 @@
-<h1>欢迎来到阿甘兄的主页</h1>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>魔方大师 - 技术支持</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f9f9f9;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 8px;
+        }
+        .logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #4a90d9 0%, #1a1a2e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+        .subtitle {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 32px;
+        }
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: #1a1a2e;
+        }
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            color: #2c5282;
+        }
+        p, li {
+            font-size: 15px;
+            color: #444;
+            margin-bottom: 12px;
+        }
+        ul, ol {
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+        li { margin-bottom: 8px; }
+        .highlight {
+            background: #f0f7ff;
+            border-left: 4px solid #4a90d9;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+        .highlight p { margin-bottom: 0; color: #2c5282; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #e2e8f0;
+            padding: 10px 14px;
+            text-align: left;
+        }
+        th {
+            background: #f7fafc;
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+        .faq-item {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+        .faq-item summary {
+            padding: 14px 18px;
+            font-weight: 600;
+            color: #1a1a2e;
+            cursor: pointer;
+            background: #f7fafc;
+            list-style: none;
+            position: relative;
+            user-select: none;
+        }
+        .faq-item summary::after {
+            content: "+";
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: #4a90d9;
+            font-weight: 400;
+        }
+        .faq-item[open] summary::after { content: "−"; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-body {
+            padding: 14px 18px 4px;
+            background: #fff;
+        }
+        .contact-card {
+            background: #f7fafc;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+        .contact-card a {
+            color: #4a90d9;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .contact-card a:hover { text-decoration: underline; }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 13px;
+            color: #888;
+            text-align: center;
+        }
+        .footer a {
+            color: #4a90d9;
+            text-decoration: none;
+            margin: 0 6px;
+        }
+        .footer a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="logo">🧊</div>
+        <h1>魔方大师 · 技术支持</h1>
+    </div>
+    <p class="subtitle">Cube Master · Support Center &nbsp;|&nbsp; 更新日期：2026年5月21日</p>
+
+    <div class="highlight">
+        <p><strong>欢迎使用「魔方大师」！</strong>这里是官方技术支持页面。如果您在使用过程中遇到问题或有任何建议，欢迎通过本页底部的邮箱联系我们，通常会在 1~2 个工作日内回复。</p>
+    </div>
+
+    <h2>一、应用简介</h2>
+    <p>「魔方大师」是一款 iOS 原生 3D 魔方应用，主打<strong>丝滑手势操作</strong>、<strong>AI 智能求解</strong>和<strong>分步教学引导</strong>，并支持通过摄像头扫描识别您手中真实的魔方。</p>
+    <ul>
+        <li>📱 系统要求：iOS 16.0 或更高版本</li>
+        <li>🎯 适用设备：iPhone（iPad 兼容运行）</li>
+        <li>💰 完全免费：无广告、无内购、无登录</li>
+        <li>🔒 离线运行：不收集任何个人数据</li>
+    </ul>
+
+    <h2>二、快速上手</h2>
+    <ol>
+        <li><strong>自由旋转</strong>：在魔方面上滑动手指即可旋转对应的一层；在背景区域滑动可旋转视角，双指捏合可缩放，双击重置视角。</li>
+        <li><strong>一键打乱</strong>：点击「打乱」按钮，App 会随机生成 15~25 步打乱序列并动画演示。</li>
+        <li><strong>自动求解</strong>：点击「求解」按钮，AI 将使用 Kociemba 算法计算最优解（通常 18~22 步）并自动播放还原动画，速度可调（0.5x / 1x / 2x / 4x）。</li>
+        <li><strong>分步教学</strong>：进入「教学模式」后，App 会用 3D 箭头逐步指示下一步操作，您手动执行后系统会自动验证。</li>
+        <li><strong>扫描实体魔方</strong>：进入「扫描」模式，按提示依次将魔方六个面对准摄像头，App 会自动识别颜色，并生成针对您手中魔方的分步还原引导。</li>
+    </ol>
+
+    <h2>三、常见问题（FAQ）</h2>
+
+    <details class="faq-item">
+        <summary>扫描实体魔方时颜色识别不准怎么办？</summary>
+        <div class="faq-body">
+            <p>建议在<strong>自然光或明亮的白光环境</strong>下扫描，避免黄光、强烈逆光或反光。如果某一格识别错误，可以在「确认颜色」页面手动点击该格切换正确颜色。识别完成后，App 会自动校验魔方状态是否合法。</p>
+        </div>
+    </details>
+
+    <details class="faq-item">
+        <summary>App 提示"魔方状态无效"是什么意思？</summary>
+        <div class="faq-body">
+            <p>这表示当前 54 格颜色组合在物理上不可能存在（比如某个颜色多了或少了）。请检查是否有某一面被扫描了两次，或某个角块/棱块颜色识别有误，进入「颜色确认」页手动修正后即可继续。</p>
+        </div>
+    </details>
+
+    <details class="faq-item">
+        <summary>手势旋转不跟手，或者旋转错了层怎么办？</summary>
+        <div class="faq-body">
+            <p>请确保从需要旋转的<strong>方块面</strong>开始滑动，而不是从背景开始。手指滑动距离超过 20pt 后才会识别旋转方向；松手时如果旋转角度不足 45°，会自动回弹取消，便于您撤销误操作。</p>
+        </div>
+    </details>
+
+    <details class="faq-item">
+        <summary>AI 求解算出的步数为什么不是最少的？</summary>
+        <div class="faq-body">
+            <p>App 使用 Kociemba 两阶段算法，在<strong>速度</strong>与<strong>步数</strong>之间做了平衡，通常能在毫秒级时间内给出 18~22 步的接近最优解。这已经远优于人类层先法（约 100 步）的水平。</p>
+        </div>
+    </details>
+
+    <details class="faq-item">
+        <summary>我的成绩记录、设置丢失了？</summary>
+        <div class="faq-body">
+            <p>所有数据都存储在设备本地。如果您卸载并重新安装 App，本地数据会被清除。目前 App 不提供云同步功能，请在卸载前留意您的最佳成绩记录。</p>
+        </div>
+    </details>
+
+    <details class="faq-item">
+        <summary>是否支持 2x2、4x4 等其他阶数的魔方？</summary>
+        <div class="faq-body">
+            <p>当前版本仅支持标准 3x3 魔方。2x2 / 4x4 的支持已在我们的规划中，将在后续版本逐步推出。</p>
+        </div>
+    </details>
+
+    <details class="faq-item">
+        <summary>触觉反馈/音效没有响应？</summary>
+        <div class="faq-body">
+            <p>请前往 App 内「设置」页面确认触觉反馈和音效开关已开启。触觉反馈依赖 iPhone 的 Taptic Engine，需要 iPhone 8 及以上机型；如果手机处于静音模式，部分音效也会被系统屏蔽。</p>
+        </div>
+    </details>
+
+    <details class="faq-item">
+        <summary>App 会收集我的个人数据吗？</summary>
+        <div class="faq-body">
+            <p>不会。「魔方大师」完全离线运行，不收集任何个人信息，不包含任何第三方分析或广告 SDK。详情请查阅 <a href="privacy-policy.html" style="color:#4a90d9;">隐私政策</a>。</p>
+        </div>
+    </details>
+
+    <h2>四、系统兼容性</h2>
+    <table>
+        <tr>
+            <th>项目</th>
+            <th>要求</th>
+        </tr>
+        <tr>
+            <td>操作系统</td>
+            <td>iOS 16.0 及以上</td>
+        </tr>
+        <tr>
+            <td>推荐设备</td>
+            <td>iPhone 12 及以上（流畅体验 60FPS）</td>
+        </tr>
+        <tr>
+            <td>所需权限</td>
+            <td>摄像头（仅用于扫描实体魔方功能）</td>
+        </tr>
+        <tr>
+            <td>网络要求</td>
+            <td>无需联网，完全离线可用</td>
+        </tr>
+    </table>
+
+    <h2>五、联系我们</h2>
+    <div class="contact-card">
+        <p>遇到 Bug、想要新功能、或者只是想跟我们聊聊魔方？欢迎来信：</p>
+        <p>📮 支持邮箱：<a href="mailto:410869924@qq.com">410869924@qq.com</a></p>
+        <p style="margin-bottom:0;color:#888;font-size:14px;">来信时请尽量附上您的设备型号、iOS 版本、App 版本号，并简要描述问题复现步骤，方便我们更快定位问题。</p>
+    </div>
+
+    <h2>六、相关链接</h2>
+    <ul>
+        <li><a href="privacy-policy.html" style="color:#4a90d9;">隐私政策</a></li>
+    </ul>
+
+    <div class="footer">
+        <p>© 2026 魔方大师 · All Rights Reserved.</p>
+        <p style="margin-top:6px;">
+            <a href="index.html">技术支持</a> ·
+            <a href="privacy-policy.html">隐私政策</a>
+        </p>
+    </div>
+</div>
+</body>
+</html>
