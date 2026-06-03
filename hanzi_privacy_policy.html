@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<title>隐私政策 · 汉字拆拆乐</title>
+<style>
+  :root {
+    --bg: #FBF9F5;
+    --surface: #FFFFFF;
+    --surface-alt: #F5F3EF;
+    --border: #E4E2DE;
+    --primary: #006C4D;
+    --primary-dim: #69DBAD;
+    --secondary: #A43C12;
+    --text: #1B1C1A;
+    --text-dim: #3D4943;
+    --text-mute: #6D7A72;
+    --accent-tip-bg: #E8F5EE;
+    --accent-tip-border: #C7E8D7;
+    --accent-warn-bg: #FFF3EC;
+    --accent-warn-border: #FFD7C2;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-text-size-adjust: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    word-wrap: break-word;
+  }
+  body {
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+  }
+  header.brand {
+    padding: 24px 0 16px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px;
+  }
+  .brand .eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .brand h1 {
+    margin: 0 0 8px;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.2px;
+  }
+  .brand .meta {
+    color: var(--text-mute);
+    font-size: 13px;
+    margin: 0;
+  }
+  .brand .meta span + span::before {
+    content: " · ";
+    margin: 0 4px;
+    color: var(--border);
+  }
+
+  .summary {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-bottom: 28px;
+  }
+  .summary h2 {
+    margin: 0 0 10px;
+    font-size: 15px;
+    color: var(--text-dim);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .summary ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  .summary li {
+    font-size: 14px;
+    color: var(--text-dim);
+    margin: 4px 0;
+  }
+  .summary li strong { color: var(--primary); }
+
+  nav.toc {
+    background: var(--surface-alt);
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin-bottom: 32px;
+  }
+  nav.toc .toc-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-mute);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  nav.toc ol {
+    margin: 0;
+    padding-left: 22px;
+  }
+  nav.toc li {
+    margin: 4px 0;
+    font-size: 14px;
+  }
+  nav.toc a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+  nav.toc a:hover { text-decoration: underline; }
+
+  section {
+    margin-bottom: 36px;
+  }
+  section h2 {
+    font-size: 18px;
+    color: var(--primary);
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--primary-dim);
+    font-weight: 800;
+    scroll-margin-top: 16px;
+  }
+  section h3 {
+    font-size: 15px;
+    color: var(--text);
+    margin: 20px 0 8px;
+    font-weight: 700;
+  }
+  section p {
+    margin: 8px 0;
+    color: var(--text);
+  }
+  section ul, section ol {
+    padding-left: 22px;
+    margin: 8px 0;
+  }
+  section li { margin: 4px 0; }
+  section strong { color: var(--text); }
+
+  .tip {
+    background: var(--accent-tip-bg);
+    border: 1px solid var(--accent-tip-border);
+    border-left: 4px solid var(--primary);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-size: 14px;
+    color: var(--text-dim);
+  }
+  .warn {
+    background: var(--accent-warn-bg);
+    border: 1px solid var(--accent-warn-border);
+    border-left: 4px solid var(--secondary);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-size: 14px;
+    color: var(--text-dim);
+  }
+  .tip .tag, .warn .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 6px;
+    vertical-align: 1px;
+    letter-spacing: 0.5px;
+  }
+  .tip .tag {
+    background: var(--primary);
+    color: #fff;
+  }
+  .warn .tag {
+    background: var(--secondary);
+    color: #fff;
+  }
+
+  table.sdk {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 13px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  table.sdk th, table.sdk td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table.sdk th {
+    background: var(--surface-alt);
+    font-weight: 700;
+    color: var(--text-dim);
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  table.sdk tr:last-child td { border-bottom: none; }
+
+  .status-pill {
+    display: inline-block;
+    padding: 1px 8px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+  }
+  .status-pill.on  { background: #E8F5EE; color: var(--primary); }
+  .status-pill.off { background: #F3EDE9; color: var(--text-mute); }
+
+  footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--text-mute);
+    font-size: 12px;
+    text-align: center;
+    line-height: 1.7;
+  }
+  footer a { color: var(--primary); text-decoration: none; }
+
+  @media (max-width: 380px) {
+    .container { padding: 24px 16px 64px; }
+    .brand h1 { font-size: 22px; }
+    section h2 { font-size: 17px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="brand">
+    <div class="eyebrow">汉字拆拆乐 · Hanzi Puzzle</div>
+    <h1>隐私政策</h1>
+    <p class="meta">
+      <span>版本 v1.0</span>
+      <span>发布日期 2026-06-03</span>
+      <span>生效日期 2026-06-03</span>
+    </p>
+  </header>
+
+  <div class="summary">
+    <h2>一句话摘要</h2>
+    <ul>
+      <li>本应用 <strong>不要求注册账号</strong>，不收集您的姓名、手机号、身份证号、邮箱等个人身份信息。</li>
+      <li>本应用 <strong>不收集</strong> 位置信息、通讯录、相册、麦克风、相机权限。</li>
+      <li>本应用所产生的关卡进度、金币余额 <strong>仅存储在您的设备 Keychain 与您 Apple ID 的 iCloud 中</strong>，开发者无法访问。</li>
+      <li>本应用当前 <strong>未启用任何广告 SDK</strong>，也不集成第三方统计分析 SDK。</li>
+    </ul>
+  </div>
+
+  <nav class="toc" aria-label="目录">
+    <div class="toc-title">目录</div>
+    <ol>
+      <li><a href="#s1">引言</a></li>
+      <li><a href="#s2">我们收集与使用的信息</a></li>
+      <li><a href="#s3">权限申请说明</a></li>
+      <li><a href="#s4">第三方 SDK 与服务清单</a></li>
+      <li><a href="#s5">信息的存储、共享与转让</a></li>
+      <li><a href="#s6">信息安全保护</a></li>
+      <li><a href="#s7">您的权利</a></li>
+      <li><a href="#s8">未成年人保护</a></li>
+      <li><a href="#s9">本政策的修订</a></li>
+      <li><a href="#s10">联系我们</a></li>
+    </ol>
+  </nav>
+
+  <section id="s1">
+    <h2>1. 引言</h2>
+    <p>欢迎您使用「汉字拆拆乐」（以下简称"<strong>本应用</strong>"或"<strong>我们</strong>"）。本应用是一款以汉字笔画拆解为玩法的离线益智游戏，由本应用的开发者独立开发与运营。</p>
+    <p>我们深知个人信息对您的重要性，将依据《中华人民共和国网络安全法》《中华人民共和国个人信息保护法》《中华人民共和国未成年人保护法》《App 违法违规收集使用个人信息行为认定方法》等法律法规，以及您所使用应用商店的相关规则，处理您在使用本应用过程中产生的相关信息。</p>
+    <p>本政策旨在帮助您了解：</p>
+    <ul>
+      <li>我们会收集哪些信息、如何使用以及为何收集；</li>
+      <li>我们使用了哪些第三方服务，以及它们如何处理信息；</li>
+      <li>您对自己信息所享有的权利；</li>
+      <li>我们如何保障信息安全。</li>
+    </ul>
+    <p><strong>在您开始使用本应用之前，请您仔细阅读并充分理解本政策的全部内容。</strong>当您下载、安装、启动或继续使用本应用时，即表示您已知悉并同意本政策所述各项条款。</p>
+  </section>
+
+  <section id="s2">
+    <h2>2. 我们收集与使用的信息</h2>
+
+    <h3>2.1 本应用 <em>不会</em> 收集的信息</h3>
+    <p>本应用为一款纯本地玩法的单机益智游戏，<strong>不需要您注册账号</strong>，也不会以任何方式向我们的服务器上传以下任何信息：</p>
+    <ul>
+      <li>姓名、性别、出生日期、身份证号、手机号、邮箱地址；</li>
+      <li>设备唯一标识符（IDFA / IDFV）、MAC 地址、IMEI、设备序列号；</li>
+      <li>GPS 位置、IP 地址（除苹果系统层为内购、iCloud 同步等所必需的最小通信外）；</li>
+      <li>通讯录、短信、通话记录、日历、照片、视频、麦克风录音、摄像头画面；</li>
+      <li>第三方账号信息（微信、QQ、微博、Apple ID 的可识别身份等）。</li>
+    </ul>
+
+    <h3>2.2 本应用会在本地处理或保存的信息</h3>
+    <p>下表所列信息全部 <strong>仅保存在您的设备本地或您 Apple ID 名下的 iCloud 中</strong>，不会被我们或任何第三方读取：</p>
+    <table class="sdk">
+      <thead>
+        <tr>
+          <th>信息类型</th>
+          <th>用途</th>
+          <th>存储位置</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>关卡进度（已通关关卡、星级、最佳耗时）</td>
+          <td>用于在您下次启动时恢复进度，并展示在选关页</td>
+          <td>本机 Keychain；本机 Application Support 文件作为备份</td>
+        </tr>
+        <tr>
+          <td>金币余额</td>
+          <td>用于在游戏内"提示 / 跳过"等需消耗金币的功能扣费与展示</td>
+          <td>本机 Keychain；通过 iCloud Key-Value Store 在您同一 Apple ID 的设备间自动同步</td>
+        </tr>
+        <tr>
+          <td>设置偏好（背景音乐开关、音效开关）</td>
+          <td>用于在您下次启动时保留您的偏好</td>
+          <td>本机 UserDefaults</td>
+        </tr>
+        <tr>
+          <td>内购订单状态</td>
+          <td>用于校验"金币包"内购是否完成并到账</td>
+          <td>Apple StoreKit 处理，仅订单状态短暂回传给本应用进行金币入账</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="tip"><span class="tag">说明</span>以上信息均不与任何能够识别您身份的字段绑定。即便您卸载本应用，上述信息仍可能保留在 iCloud Key-Value Store 中（受 Apple 控制），以便您在重装时恢复金币余额；您可在系统设置中按章节 7 所述方式自行清除。</div>
+  </section>
+
+  <section id="s3">
+    <h2>3. 权限申请说明</h2>
+    <p>本应用当前版本 <strong>不会主动向您申请</strong> 任何系统敏感权限。具体如下：</p>
+    <table class="sdk">
+      <thead>
+        <tr>
+          <th>系统权限</th>
+          <th>是否申请</th>
+          <th>说明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>位置（精确 / 模糊）</td><td><span class="status-pill off">未申请</span></td><td>本应用无需位置</td></tr>
+        <tr><td>相机</td><td><span class="status-pill off">未申请</span></td><td>本应用无需拍摄</td></tr>
+        <tr><td>麦克风</td><td><span class="status-pill off">未申请</span></td><td>本应用无需录音</td></tr>
+        <tr><td>相册（照片）</td><td><span class="status-pill off">未申请</span></td><td>本应用无需读取相册</td></tr>
+        <tr><td>通讯录</td><td><span class="status-pill off">未申请</span></td><td>本应用无需联系人</td></tr>
+        <tr><td>通知</td><td><span class="status-pill off">未申请</span></td><td>本应用无需推送提醒</td></tr>
+        <tr><td>追踪（App Tracking Transparency / IDFA）</td><td><span class="status-pill off">未申请</span></td><td>本应用未在 iOS 启动后调用 IDFA 追踪接口；ATT 弹窗不会出现</td></tr>
+      </tbody>
+    </table>
+    <div class="warn"><span class="tag">未来可能变化</span>如果我们后续启用广告 SDK（详见第 4 节），可能在合规且必要的情况下申请 ATT 权限，届时会以版本更新与本政策修订的方式提前告知您。</div>
+  </section>
+
+  <section id="s4">
+    <h2>4. 第三方 SDK 与服务清单</h2>
+    <p>本应用集成或依赖的第三方 SDK / 服务如下，请您留意各 SDK 的提供方及其隐私政策：</p>
+
+    <table class="sdk">
+      <thead>
+        <tr>
+          <th>名称</th>
+          <th>提供方</th>
+          <th>用途</th>
+          <th>当前状态</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Apple StoreKit</td>
+          <td>Apple Inc.</td>
+          <td>处理"金币包"应用内购买</td>
+          <td><span class="status-pill on">已启用</span></td>
+        </tr>
+        <tr>
+          <td>Apple iCloud Key-Value Store</td>
+          <td>Apple Inc.</td>
+          <td>同步金币余额至您的 Apple ID</td>
+          <td><span class="status-pill on">已启用</span></td>
+        </tr>
+        <tr>
+          <td>Apple Keychain</td>
+          <td>Apple Inc.</td>
+          <td>本机安全存储金币余额与关卡进度</td>
+          <td><span class="status-pill on">已启用</span></td>
+        </tr>
+        <tr>
+          <td>Google Mobile Ads SDK (AdMob)</td>
+          <td>Google LLC</td>
+          <td>预留用于未来海外版的激励视频 / 插屏广告</td>
+          <td><span class="status-pill off">未启用</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>4.1 关于 Apple 提供的服务</h3>
+    <p>StoreKit、iCloud、Keychain 均为 iOS 系统级能力。它们在工作过程中可能会处理与您 Apple ID 相关的信息，<strong>该过程由 Apple 直接管控</strong>，相关数据处理依据 Apple 的隐私政策执行，本应用开发者无权访问。详见：</p>
+    <ul>
+      <li><a href="https://www.apple.com/legal/privacy/zh-cn/" target="_blank" rel="noopener">Apple 隐私政策</a></li>
+    </ul>
+
+    <h3>4.2 关于 Google Mobile Ads SDK</h3>
+    <p>Google Mobile Ads SDK（AdMob）已在本应用的依赖清单中预留，<strong>但当前版本的代码中并未真正初始化和调用该 SDK</strong>，因此不会发生任何由广告 SDK 引起的数据收集与发送行为。</p>
+    <p>如果未来版本启用 AdMob，可能会涉及以下数据的处理：广告标识符（IDFA，仅在您通过 ATT 弹窗同意后）、设备型号与系统版本、粗略地理区域、广告交互行为等。届时我们将通过版本更新公告与本政策的修订，明确告知具体的数据使用情况，并在必要时向您再次征得同意。AdMob 的数据处理依据 Google 的隐私政策执行，详见：</p>
+    <ul>
+      <li><a href="https://policies.google.com/privacy?hl=zh-CN" target="_blank" rel="noopener">Google 隐私政策</a></li>
+      <li><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google Mobile Ads SDK 数据披露</a></li>
+    </ul>
+  </section>
+
+  <section id="s5">
+    <h2>5. 信息的存储、共享与转让</h2>
+
+    <h3>5.1 存储地点</h3>
+    <p>第 2.2 节列出的本地信息全部存储于您的设备本地或您 Apple ID 名下的 iCloud。本应用开发者不持有任何用户数据存储服务器，<strong>不存在向境外传输个人信息的情形</strong>（iCloud 由 Apple 控制，与本应用的开发者数据库无关）。</p>
+
+    <h3>5.2 存储期限</h3>
+    <p>本机数据将持续保留，直到您：</p>
+    <ul>
+      <li>主动在系统设置中清除 iCloud Key-Value Store 数据；</li>
+      <li>将设备恢复出厂设置；</li>
+      <li>卸载本应用（部分 Keychain 数据可能因 iOS 行为保留至下次重装）。</li>
+    </ul>
+
+    <h3>5.3 共享与转让</h3>
+    <p>我们 <strong>不会</strong> 主动向任何第三方公司、组织或个人共享、转让您的个人信息，<strong>例外情形仅限于</strong>：</p>
+    <ul>
+      <li>事先获得您的明示同意；</li>
+      <li>根据法律法规、强制性的行政或司法要求；</li>
+      <li>在保护本应用、用户或公众的合法权益所必需的范围内。</li>
+    </ul>
+
+    <h3>5.4 公开披露</h3>
+    <p>我们仅会在以下情形公开披露您的个人信息：</p>
+    <ul>
+      <li>获得您明确同意后；</li>
+      <li>基于法律法规、法律程序、诉讼或政府主管部门强制性要求。</li>
+    </ul>
+  </section>
+
+  <section id="s6">
+    <h2>6. 信息安全保护</h2>
+    <p>我们采取以下措施保护本应用涉及的信息安全：</p>
+    <ul>
+      <li><strong>本机 Keychain 加密存储</strong>：金币余额、关卡进度等本地数据通过 iOS Keychain 服务存储，由系统提供硬件级加密保护。</li>
+      <li><strong>最小权限原则</strong>：本应用不申请任何与玩法无关的系统权限，详见第 3 节。</li>
+      <li><strong>不传输纯文本敏感信息</strong>：本应用不与任何开发者侧服务器通信，因此不存在网络传输个人信息的风险。</li>
+      <li><strong>使用系统级支付与同步</strong>：内购与 iCloud 同步均交由 Apple 系统完成，遵循 Apple 的安全规范。</li>
+    </ul>
+    <p>尽管我们采取了上述安全措施，但请您理解，互联网环境并非绝对安全。如发生个人信息泄露事件，我们将依据法律法规要求，及时向监管部门报告并在必要时通过本应用的版本更新公告告知您。</p>
+  </section>
+
+  <section id="s7">
+    <h2>7. 您的权利</h2>
+    <p>根据《中华人民共和国个人信息保护法》，您对本应用所涉信息享有以下权利：</p>
+
+    <h3>7.1 访问与查询</h3>
+    <p>您可以在本应用的设置页 / 选关页内随时查看您的金币余额、关卡进度、设置偏好等全部信息。本应用所涉信息仅这些，并无您不可见的额外字段。</p>
+
+    <h3>7.2 删除</h3>
+    <p>您可以通过以下任一方式清除本应用涉及的信息：</p>
+    <ul>
+      <li><strong>卸载本应用</strong>：删除本机 Application Support 中的备份文件与 UserDefaults 设置；Keychain 中的数据可能会因 iOS 机制保留至下次重装，可通过下方第二步彻底清除。</li>
+      <li><strong>清除 iCloud 数据</strong>：进入"iPhone 设置 → 您的 Apple ID → iCloud → 管理账户存储 → 汉字拆拆乐 → 删除数据"。</li>
+      <li><strong>恢复出厂设置</strong>：彻底清除设备上一切信息。</li>
+    </ul>
+
+    <h3>7.3 撤回同意</h3>
+    <p>您可以通过停止使用本应用并按 7.2 所述方式删除已有数据，即视为撤回您对本政策的同意。撤回同意不影响在此之前已发生的处理活动。</p>
+
+    <h3>7.4 投诉与举报</h3>
+    <p>如您认为本应用的个人信息处理活动侵犯了您的合法权益，您可以通过第 10 节所列联系方式向我们投诉，或向有关监管部门进行举报。</p>
+  </section>
+
+  <section id="s8">
+    <h2>8. 未成年人保护</h2>
+    <p>本应用是一款全年龄段、面向汉字学习者的益智游戏，其内容适合儿童。我们高度重视未成年人个人信息的保护：</p>
+    <ul>
+      <li>本应用 <strong>不收集任何能够识别未成年人身份</strong> 的信息；</li>
+      <li>本应用 <strong>不设置社交、聊天、UGC 等</strong> 涉及与陌生人交互的功能；</li>
+      <li>本应用包含应用内购买（金币包），<strong>建议家长开启 iOS "屏幕使用时间 → 内容与隐私访问限制 → 购买项目"</strong>，以管控未成年人的支付行为；</li>
+      <li>如果您是未成年人的监护人，并发现未成年人在未经您同意的情况下使用本应用或进行付费，请通过第 10 节联系我们，我们将在核实后协助处理。</li>
+    </ul>
+  </section>
+
+  <section id="s9">
+    <h2>9. 本政策的修订</h2>
+    <p>我们可能会不时更新本政策。更新后的政策将在本应用相同位置发布，并标注最新的"版本"与"生效日期"。</p>
+    <p>对于重大变更（如收集信息的范围扩大、用途变更、第三方 SDK 接入等），我们将通过应用内的明显提示告知您；继续使用本应用即视为您同意更新后的政策；如您不同意，请停止使用本应用。</p>
+  </section>
+
+  <section id="s10">
+    <h2>10. 联系我们</h2>
+    <p>如您对本政策或本应用的个人信息处理活动有任何疑问、意见或投诉，欢迎通过以下方式与我们联系：</p>
+    <ul>
+      <li>应用名称：汉字拆拆乐</li>
+      <li>开发者联系邮箱：<a href="mailto:support@example.com">support@example.com</a>（请替换为真实邮箱）</li>
+    </ul>
+    <p>我们将在收到您的请求后 <strong>15 个工作日内</strong> 给予回复。</p>
+  </section>
+
+  <footer>
+    © 2026 汉字拆拆乐 · Hanzi Puzzle<br>
+    本政策最近一次更新：2026-06-03
+  </footer>
+
+</div>
+</body>
+</html>
