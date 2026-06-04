@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" data-lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<title>用户协议 · 汉字拆拆乐 / Terms of Service · HanziPuzzle</title>
+<style>
+  :root {
+    --bg: #FBF9F5;
+    --surface: #FFFFFF;
+    --surface-alt: #F5F3EF;
+    --border: #E4E2DE;
+    --primary: #006C4D;
+    --primary-dim: #69DBAD;
+    --secondary: #A43C12;
+    --text: #1B1C1A;
+    --text-dim: #3D4943;
+    --text-mute: #6D7A72;
+    --accent-tip-bg: #E8F5EE;
+    --accent-tip-border: #C7E8D7;
+    --accent-warn-bg: #FFF3EC;
+    --accent-warn-border: #FFD7C2;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-text-size-adjust: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    word-wrap: break-word;
+  }
+  body {
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+  }
+  html[data-lang="zh"] .lang-en { display: none !important; }
+  html[data-lang="en"] .lang-zh { display: none !important; }
+
+  header.brand {
+    padding: 24px 0 16px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .brand-text { flex: 1; min-width: 0; }
+  .brand .eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .brand h1 {
+    margin: 0 0 8px;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.2px;
+  }
+  .brand .meta {
+    color: var(--text-mute);
+    font-size: 13px;
+    margin: 0;
+  }
+  .brand .meta span + span::before {
+    content: " · ";
+    margin: 0 4px;
+    color: var(--border);
+  }
+  .lang-switch {
+    display: inline-flex;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px;
+    flex-shrink: 0;
+  }
+  .lang-switch button {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    padding: 6px 14px;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-mute);
+    border-radius: 999px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+  }
+  .lang-switch button.active {
+    background: var(--primary);
+    color: #fff;
+  }
+
+  .summary {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-bottom: 28px;
+  }
+  .summary h2 {
+    margin: 0 0 10px;
+    font-size: 15px;
+    color: var(--text-dim);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .summary ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  .summary li {
+    font-size: 14px;
+    color: var(--text-dim);
+    margin: 4px 0;
+  }
+  .summary li strong { color: var(--primary); }
+
+  nav.toc {
+    background: var(--surface-alt);
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin-bottom: 32px;
+  }
+  nav.toc .toc-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-mute);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  nav.toc ol {
+    margin: 0;
+    padding-left: 22px;
+  }
+  nav.toc li {
+    margin: 4px 0;
+    font-size: 14px;
+  }
+  nav.toc a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+  nav.toc a:hover { text-decoration: underline; }
+
+  section { margin-bottom: 36px; }
+  section h2 {
+    font-size: 18px;
+    color: var(--primary);
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--primary-dim);
+    font-weight: 800;
+    scroll-margin-top: 16px;
+  }
+  section h3 {
+    font-size: 15px;
+    color: var(--text);
+    margin: 20px 0 8px;
+    font-weight: 700;
+  }
+  section p { margin: 8px 0; color: var(--text); }
+  section ul, section ol {
+    padding-left: 22px;
+    margin: 8px 0;
+  }
+  section li { margin: 4px 0; }
+  section strong { color: var(--text); }
+
+  .tip {
+    background: var(--accent-tip-bg);
+    border: 1px solid var(--accent-tip-border);
+    border-left: 4px solid var(--primary);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-size: 14px;
+    color: var(--text-dim);
+  }
+  .warn {
+    background: var(--accent-warn-bg);
+    border: 1px solid var(--accent-warn-border);
+    border-left: 4px solid var(--secondary);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-size: 14px;
+    color: var(--text-dim);
+  }
+  .tip .tag, .warn .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 6px;
+    vertical-align: 1px;
+    letter-spacing: 0.5px;
+  }
+  .tip .tag { background: var(--primary); color: #fff; }
+  .warn .tag { background: var(--secondary); color: #fff; }
+
+  footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--text-mute);
+    font-size: 12px;
+    text-align: center;
+    line-height: 1.7;
+  }
+  footer a { color: var(--primary); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 380px) {
+    .container { padding: 24px 16px 64px; }
+    .brand h1 { font-size: 22px; }
+    section h2 { font-size: 17px; }
+  }
+</style>
+<script>
+  (function() {
+    try {
+      var p = new URLSearchParams(location.search);
+      var saved = null;
+      try { saved = localStorage.getItem('hanzi-support-lang'); } catch (e) {}
+      var nav = (navigator.language || 'zh').toLowerCase();
+      var defaultLang = nav.indexOf('zh') === 0 ? 'zh' : 'en';
+      var lang = p.get('lang') || saved || defaultLang;
+      if (lang !== 'zh' && lang !== 'en') lang = 'zh';
+      document.documentElement.dataset.lang = lang;
+      document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en';
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<div class="container">
+
+  <header class="brand">
+    <div class="brand-text">
+      <div class="eyebrow">汉字拆拆乐 · HanziPuzzle</div>
+      <h1 class="lang-zh">用户协议</h1>
+      <h1 class="lang-en">Terms of Service</h1>
+      <p class="meta">
+        <span class="lang-zh">版本 v1.0</span>
+        <span class="lang-en">Version v1.0</span>
+        <span class="lang-zh">发布日期 2026-06-04</span>
+        <span class="lang-en">Effective 2026-06-04</span>
+      </p>
+    </div>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" data-lang="zh">中</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <!-- 一句话摘要 -->
+  <div class="summary">
+    <h2 class="lang-zh">一句话摘要</h2>
+    <h2 class="lang-en">In Plain English</h2>
+    <ul class="lang-zh">
+      <li>本协议是你与"汉字拆拆乐"开发者之间的<strong>使用约定</strong>。</li>
+      <li>下载并使用本应用，即视为<strong>同意</strong>本协议条款。</li>
+      <li>金币是<strong>消耗型虚拟道具</strong>，购买后通过 Apple 不通过开发者；不能兑换现金。</li>
+      <li>请<strong>遵守 Apple App Store 政策</strong>与所在地区法律法规。</li>
+    </ul>
+    <ul class="lang-en">
+      <li>This is the agreement between you and the developer of HanziPuzzle.</li>
+      <li>Downloading or using the app means you <strong>accept</strong> these terms.</li>
+      <li>Coins are <strong>consumable virtual items</strong> sold via Apple, not cashable, not refundable by the developer.</li>
+      <li>Please follow the <strong>Apple App Store rules</strong> and your local laws.</li>
+    </ul>
+  </div>
+
+  <!-- 目录 -->
+  <nav class="toc" aria-label="Contents">
+    <div class="toc-title lang-zh">目录</div>
+    <div class="toc-title lang-en">Contents</div>
+    <ol class="lang-zh">
+      <li><a href="#s1">协议接受与变更</a></li>
+      <li><a href="#s2">服务说明</a></li>
+      <li><a href="#s3">账号与设备</a></li>
+      <li><a href="#s4">虚拟金币与内购</a></li>
+      <li><a href="#s5">退款政策</a></li>
+      <li><a href="#s6">用户行为规范</a></li>
+      <li><a href="#s7">知识产权</a></li>
+      <li><a href="#s8">免责声明</a></li>
+      <li><a href="#s9">服务变更与终止</a></li>
+      <li><a href="#s10">争议解决与法律适用</a></li>
+      <li><a href="#s11">联系方式</a></li>
+    </ol>
+    <ol class="lang-en">
+      <li><a href="#s1">Acceptance &amp; Changes</a></li>
+      <li><a href="#s2">The Service</a></li>
+      <li><a href="#s3">Accounts &amp; Devices</a></li>
+      <li><a href="#s4">Virtual Coins &amp; In-App Purchases</a></li>
+      <li><a href="#s5">Refund Policy</a></li>
+      <li><a href="#s6">User Conduct</a></li>
+      <li><a href="#s7">Intellectual Property</a></li>
+      <li><a href="#s8">Disclaimer</a></li>
+      <li><a href="#s9">Service Changes &amp; Termination</a></li>
+      <li><a href="#s10">Disputes &amp; Governing Law</a></li>
+      <li><a href="#s11">Contact</a></li>
+    </ol>
+  </nav>
+
+  <!-- ============ 1. 协议接受 ============ -->
+  <section id="s1">
+    <h2 class="lang-zh">1. 协议接受与变更</h2>
+    <h2 class="lang-en">1. Acceptance and Changes</h2>
+    <p class="lang-zh">本《用户协议》（以下简称"本协议"）是您（以下简称"用户"或"您"）与"汉字拆拆乐"（以下简称"本应用"）开发者之间就使用本应用产品与服务所订立的协议。当您下载、安装、运行或以任何方式使用本应用时，即表示您已经阅读、理解并同意接受本协议的全部内容。</p>
+    <p class="lang-en">This Terms of Service ("Terms") is the agreement between you ("you" or "user") and the developer of HanziPuzzle (the "App") regarding your use of the App and its services. By downloading, installing, launching or otherwise using the App, you acknowledge that you have read, understood and agreed to be bound by these Terms.</p>
+    <p class="lang-zh">开发者保留<strong>随时修改本协议</strong>的权利。修订内容将通过更新本页面发布，并在本协议顶部更新生效日期。继续使用本应用即视为接受修订后的协议。如不同意修订，请停止使用本应用。</p>
+    <p class="lang-en">The developer reserves the right to <strong>modify these Terms at any time</strong>. Updated terms will be published on this page with the new effective date. Continued use of the App constitutes acceptance of the revised Terms. If you disagree, please stop using the App.</p>
+    <div class="warn">
+      <span class="tag lang-zh">未成年人</span><span class="tag lang-en">MINORS</span>
+      <span class="lang-zh">如果您未满 18 周岁，请在监护人陪同下阅读本协议，并经监护人同意后再使用本应用，特别是涉及任何内购行为时。</span>
+      <span class="lang-en">If you are under 18, please review these Terms with your guardian and obtain their consent before using the App, especially before making any in-app purchase.</span>
+    </div>
+  </section>
+
+  <!-- ============ 2. 服务说明 ============ -->
+  <section id="s2">
+    <h2 class="lang-zh">2. 服务说明</h2>
+    <h2 class="lang-en">2. The Service</h2>
+    <p class="lang-zh">本应用是一款单机汉字拆字解谜游戏。核心玩法是：玩家通过点选目标字的笔画，将其按预设方案拆分为偏旁部件。游戏所需的笔画与拆字数据均为本地资源，运行不依赖开发者的服务器。</p>
+    <p class="lang-en">The App is a single-player Chinese-character decomposition puzzle game. The core gameplay is: tap the strokes of a target character to split it into its radical components according to the predefined solution. All gameplay data is bundled locally — the App does not depend on the developer's servers to run.</p>
+    <p class="lang-zh">应用功能可能包括但不限于：关卡挑战、笔画动画演示、提示与跳过、金币购买、关卡进度的本地与 iCloud 同步、分享卡片生成等。具体功能以应用最新版本为准。</p>
+    <p class="lang-en">Features may include but are not limited to: level challenges, stroke animation, hints and skips, in-app coin purchases, local + iCloud sync of progress, share card generation. Actual features depend on the latest version of the App.</p>
+  </section>
+
+  <!-- ============ 3. 账号与设备 ============ -->
+  <section id="s3">
+    <h2 class="lang-zh">3. 账号与设备</h2>
+    <h2 class="lang-en">3. Accounts and Devices</h2>
+    <p class="lang-zh">本应用<strong>不要求注册账号</strong>。您的关卡进度与金币余额绑定到您当前设备的 Keychain，并通过您 Apple ID 的 iCloud 在受信任设备之间同步。</p>
+    <p class="lang-en">The App <strong>does not require account registration</strong>. Your level progress and coin balance are bound to your device Keychain and synced across your trusted devices via your Apple ID's iCloud.</p>
+    <p class="lang-zh">由于不存在开发者侧的账号系统，开发者<strong>无法</strong>通过用户名/密码方式找回数据。请妥善保管您的 Apple ID。如果您：(1) 退出并重新登录新的 Apple ID；(2) 在系统设置中关闭 iCloud Keychain；(3) 卸载应用后未在 iCloud 同步生效前重装——上述任一情况都可能造成进度或金币余额暂时不可见或丢失，开发者对此不承担补偿责任。</p>
+    <p class="lang-en">Because there is no server-side account system, the developer <strong>cannot</strong> recover your data through any username/password scheme. Please safeguard your Apple ID. The following actions may cause progress or coins to become temporarily inaccessible or lost, and the developer assumes no liability: (1) signing out and signing into a different Apple ID; (2) disabling iCloud Keychain in system settings; (3) reinstalling the App before iCloud has had a chance to sync.</p>
+  </section>
+
+  <!-- ============ 4. 虚拟金币与内购 ============ -->
+  <section id="s4">
+    <h2 class="lang-zh">4. 虚拟金币与内购</h2>
+    <h2 class="lang-en">4. Virtual Coins and In-App Purchases</h2>
+    <h3 class="lang-zh">4.1 金币性质</h3>
+    <h3 class="lang-en">4.1 Nature of Coins</h3>
+    <p class="lang-zh">游戏内"金币"是<strong>消耗型 (Consumable) 虚拟道具</strong>，仅在本应用内用于"提示""跳过"等辅助玩法。金币<strong>不具有现实货币属性</strong>，不可兑换为人民币、外币或任何实物，不可转让给其他用户，也不可与其他设备账号合并。</p>
+    <p class="lang-en">In-game "Coins" are <strong>consumable virtual items</strong> used only within the App for in-game features like Hints and Skips. Coins have <strong>no real-world monetary value</strong>, cannot be redeemed for cash, cannot be transferred to other users, and cannot be merged across separate Apple IDs.</p>
+    <h3 class="lang-zh">4.2 购买流程</h3>
+    <h3 class="lang-en">4.2 Purchase Flow</h3>
+    <p class="lang-zh">您可通过 App 内"金币商店"购买金币包。<strong>所有内购交易由 Apple App Store 直接处理与扣款</strong>，开发者不参与支付环节，也不接触您的支付凭证。购买完成后，金币将自动入账您当前设备的金币余额，并由 iCloud 同步到其他受信任设备。</p>
+    <p class="lang-en">You can purchase coin packs via the in-app shop. <strong>All in-app transactions are processed and charged by Apple App Store directly.</strong> The developer is not involved in payment handling and does not access your payment credentials. Once a purchase succeeds, coins are credited to your device balance and synced via iCloud to your other trusted devices.</p>
+    <h3 class="lang-zh">4.3 价格与税费</h3>
+    <h3 class="lang-en">4.3 Prices and Taxes</h3>
+    <p class="lang-zh">商品最终售价以您下单时 App Store 显示的金额为准，可能因您的 App Store 区域、汇率与当地税费而异。开发者保留调整价格的权利。已购买完成的订单不受未来价格调整影响。</p>
+    <p class="lang-en">Final price is whatever your local App Store displays at checkout and may vary by storefront, exchange rate and local taxes. The developer reserves the right to adjust prices. Past completed purchases are unaffected by future price changes.</p>
+  </section>
+
+  <!-- ============ 5. 退款 ============ -->
+  <section id="s5">
+    <h2 class="lang-zh">5. 退款政策</h2>
+    <h2 class="lang-en">5. Refund Policy</h2>
+    <p class="lang-zh">所有内购退款均由 Apple 统一处理。如您需要申请退款，请前往 <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>，使用购买时的 Apple ID 登录后选择对应订单提交申请。是否同意退款由 Apple 依据其政策决定。</p>
+    <p class="lang-en">All refunds are handled exclusively by Apple. To request a refund, visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>, sign in with the same Apple ID and submit a request for the relevant order. Whether the refund is granted is decided by Apple in accordance with its policies.</p>
+    <p class="lang-zh">如金币包<strong>付款成功但金币未到账</strong>，请通过本协议第 11 条联系方式邮件联系开发者，并提供 Apple 邮件中的<strong>订单号 (Order ID)</strong>。开发者核实后将协助补发等额金币。</p>
+    <p class="lang-en">If your purchase succeeded but coins were <strong>not credited</strong>, please email the developer (see §11) with the <strong>Order ID</strong> from your Apple receipt. After verification, the developer will manually re-grant the equivalent coins.</p>
+    <div class="tip">
+      <span class="tag lang-zh">提示</span><span class="tag lang-en">NOTE</span>
+      <span class="lang-zh">已使用过的金币不退；金币余额本身的退款会按 Apple 政策处理，开发者侧不另行扣回剩余金币。</span>
+      <span class="lang-en">Coins already spent cannot be refunded. Apple-issued refunds for the coin pack itself follow Apple's policy; the developer will not separately claw back remaining unspent coins.</span>
+    </div>
+  </section>
+
+  <!-- ============ 6. 用户行为规范 ============ -->
+  <section id="s6">
+    <h2 class="lang-zh">6. 用户行为规范</h2>
+    <h2 class="lang-en">6. User Conduct</h2>
+    <p class="lang-zh">您承诺在使用本应用过程中遵守所在地区的法律法规及 Apple App Store 相关条款，不得：</p>
+    <p class="lang-en">You agree to comply with all applicable laws and the Apple App Store terms while using the App. You agree NOT to:</p>
+    <ul class="lang-zh">
+      <li>对应用进行反编译、逆向工程、修改或试图绕过付费机制；</li>
+      <li>利用任何漏洞、外挂、自动化脚本或第三方修改工具不正当获取金币或解锁内容；</li>
+      <li>将应用用于任何违法、欺诈、传播恶意软件或侵犯第三方权利的用途；</li>
+      <li>将通过本应用获得的任何资源进行商业转售或大规模分发。</li>
+    </ul>
+    <ul class="lang-en">
+      <li>Decompile, reverse-engineer, modify, or attempt to bypass paid mechanics;</li>
+      <li>Use bugs, cheats, automation scripts or third-party modification tools to improperly obtain coins or unlock content;</li>
+      <li>Use the App for any unlawful, fraudulent purpose, to distribute malware, or to infringe any third party's rights;</li>
+      <li>Commercially resell or mass-distribute any resources obtained through the App.</li>
+    </ul>
+    <p class="lang-zh">违反上述规定的，开发者有权采取技术措施限制您使用，并保留追究法律责任的权利。</p>
+    <p class="lang-en">If you violate the above, the developer may apply technical restrictions to your usage and reserves the right to pursue legal remedies.</p>
+  </section>
+
+  <!-- ============ 7. 知识产权 ============ -->
+  <section id="s7">
+    <h2 class="lang-zh">7. 知识产权</h2>
+    <h2 class="lang-en">7. Intellectual Property</h2>
+    <p class="lang-zh">本应用的代码、UI 设计、关卡设计、图标、文字内容、音效与生成的分享卡片版式，受相关国家或地区著作权法及国际公约保护。除本应用所采用的开源数据集另行声明外，相关知识产权归开发者所有。</p>
+    <p class="lang-en">The App's source code, UI design, level design, icons, text content, sound effects and share-card layouts are protected by applicable copyright laws and international treaties. Except for the open-source datasets the App uses (see below), all intellectual property is owned by the developer.</p>
+    <p class="lang-zh">本应用的笔画数据来源于开源项目 <a href="https://github.com/skishore/makemeahanzi" target="_blank" rel="noopener">Make Me a Hanzi</a>（基于 Arphic 公众授权字体衍生），遵循其原始许可证 (ARPHIC PUBLIC LICENSE / LGPL)。在此向相关项目作者致谢。</p>
+    <p class="lang-en">Stroke data is derived from the open-source <a href="https://github.com/skishore/makemeahanzi" target="_blank" rel="noopener">Make Me a Hanzi</a> project (itself derived from Arphic public-license fonts), under its original ARPHIC PUBLIC LICENSE / LGPL. Credit goes to the original authors.</p>
+    <p class="lang-zh">未经开发者书面许可，您不得复制、改编、出租、出售、传播本应用或其任何组成部分，但<strong>合理的个人使用与正当评论引用</strong>除外。</p>
+    <p class="lang-en">Without the developer's prior written consent, you may not copy, adapt, lease, sell or distribute the App or any of its components, except for <strong>reasonable personal use and legitimate critical commentary</strong>.</p>
+  </section>
+
+  <!-- ============ 8. 免责声明 ============ -->
+  <section id="s8">
+    <h2 class="lang-zh">8. 免责声明</h2>
+    <h2 class="lang-en">8. Disclaimer</h2>
+    <p class="lang-zh">本应用以"现状"提供，不就其在所有设备和网络条件下都不出错、不中断、完全符合您的期望或目的作出明示或暗示的担保。在适用法律允许的最大范围内，开发者对以下情形不承担责任：</p>
+    <p class="lang-en">The App is provided "AS IS" without any express or implied warranty of being error-free, uninterrupted, or fitting any particular expectation. To the maximum extent permitted by law, the developer is not liable for:</p>
+    <ul class="lang-zh">
+      <li>因网络异常、iCloud 服务波动、设备故障、操作系统升级等不可抗或第三方原因造成的进度同步延迟、数据暂时不可见等情况；</li>
+      <li>因您主动操作（如清空 iCloud、切换 Apple ID、未授权第三方修改设备）导致的数据丢失；</li>
+      <li>本应用提供的笔画顺序、汉字拆解方案与您所学的特定教材或地区惯例存在差异——本应用以游戏化呈现汉字结构为目的，不构成正式语文教学材料；</li>
+      <li>因不可抗力（包括但不限于法律变化、监管要求、Apple 政策调整）导致服务无法提供或被迫终止。</li>
+    </ul>
+    <ul class="lang-en">
+      <li>Sync delays or temporarily inaccessible data due to network issues, iCloud service fluctuations, device failures, OS upgrades or other force majeure / third-party causes;</li>
+      <li>Data loss caused by your own actions (e.g., wiping iCloud data, switching Apple IDs, allowing unauthorized device modification);</li>
+      <li>Differences between the App's stroke order or decomposition scheme and what you may have learned from a specific textbook or regional convention — the App gamifies Chinese character structure for entertainment and is not a formal language-teaching material;</li>
+      <li>Inability to provide or forced termination of service due to force majeure (including but not limited to law changes, regulatory requirements, Apple policy adjustments).</li>
+    </ul>
+  </section>
+
+  <!-- ============ 9. 服务变更 ============ -->
+  <section id="s9">
+    <h2 class="lang-zh">9. 服务变更与终止</h2>
+    <h2 class="lang-en">9. Service Changes and Termination</h2>
+    <p class="lang-zh">开发者保留对本应用功能、关卡、定价、内购档位、UI 等持续迭代的权利。在合理必要时，可暂停或终止部分服务。如本应用整体终止运营，开发者将通过 App 内公告或本支持站点提前告知。终止运营后，剩余未消耗金币按 Apple 政策处理。</p>
+    <p class="lang-en">The developer reserves the right to iterate on features, levels, pricing, IAP tiers, UI, and other aspects. Where reasonable and necessary, partial services may be suspended or terminated. If the App is fully shut down, advance notice will be given through in-app notice or this support site. Remaining unspent coins after shutdown will be handled per Apple policy.</p>
+  </section>
+
+  <!-- ============ 10. 法律 ============ -->
+  <section id="s10">
+    <h2 class="lang-zh">10. 争议解决与法律适用</h2>
+    <h2 class="lang-en">10. Disputes and Governing Law</h2>
+    <p class="lang-zh">本协议的订立、效力、解释、履行及争议解决，适用<strong>中华人民共和国法律</strong>（不含港澳台地区法律）。如您与开发者之间因本协议产生争议，双方应首先友好协商解决；协商不成的，任何一方可向开发者所在地有管辖权的人民法院提起诉讼。</p>
+    <p class="lang-en">These Terms are governed by the laws of the <strong>People's Republic of China</strong> (excluding Hong Kong, Macau and Taiwan). Any dispute should first be resolved through good-faith negotiation. Failing that, either party may bring suit in the competent court at the developer's location.</p>
+    <p class="lang-zh">如您居住于中国大陆以外的地区，可能同时适用您所在地区的强制性消费者保护法律——本条款不限制您依据当地法律享有的不可放弃的权利。</p>
+    <p class="lang-en">If you reside outside Mainland China, your local mandatory consumer protection laws may also apply — these Terms do not limit any non-waivable rights you have under your local law.</p>
+  </section>
+
+  <!-- ============ 11. 联系 ============ -->
+  <section id="s11">
+    <h2 class="lang-zh">11. 联系方式</h2>
+    <h2 class="lang-en">11. Contact</h2>
+    <p class="lang-zh">如您对本协议或本应用有任何疑问、投诉或建议，请通过以下邮箱联系开发者：</p>
+    <p class="lang-en">For any questions, complaints or feedback regarding these Terms or the App, please contact the developer at:</p>
+    <p>
+      📮 <a href="mailto:410869924@qq.com?subject=HanziPuzzle%20Terms%20Inquiry"><strong>410869924@qq.com</strong></a>
+    </p>
+    <p class="lang-zh">您也可访问 <a href="hanzi_support.html">技术支持页</a> 查看常见问题与详细联系方式。</p>
+    <p class="lang-en">You can also visit the <a href="hanzi_support.html">Support page</a> for FAQs and more contact details.</p>
+  </section>
+
+  <footer>
+    <p>
+      <span class="lang-zh">© 2026 汉字拆拆乐 · HanziPuzzle. All rights reserved.</span>
+      <span class="lang-en">© 2026 HanziPuzzle. All rights reserved.</span>
+    </p>
+    <p>
+      <a href="hanzi_support.html">
+        <span class="lang-zh">技术支持</span><span class="lang-en">Support</span>
+      </a>
+      &nbsp;·&nbsp;
+      <a href="https://jianniou.github.io/yizhanyuanyue.github.io/hanzi_privacy_policy.html" target="_blank" rel="noopener">
+        <span class="lang-zh">隐私政策</span><span class="lang-en">Privacy Policy</span>
+      </a>
+    </p>
+  </footer>
+
+</div>
+
+<script>
+  (function() {
+    var buttons = document.querySelectorAll('.lang-switch button');
+    function applyLang(lang) {
+      if (lang !== 'zh' && lang !== 'en') lang = 'zh';
+      document.documentElement.dataset.lang = lang;
+      document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en';
+      try { localStorage.setItem('hanzi-support-lang', lang); } catch (e) {}
+      buttons.forEach(function(b) {
+        b.classList.toggle('active', b.dataset.lang === lang);
+      });
+    }
+    buttons.forEach(function(b) {
+      b.addEventListener('click', function() { applyLang(b.dataset.lang); });
+    });
+    applyLang(document.documentElement.dataset.lang || 'zh');
+  })();
+</script>
+</body>
+</html>

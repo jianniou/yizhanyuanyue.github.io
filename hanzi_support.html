@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" data-lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<title>技术支持 · 汉字拆拆乐 / Support · HanziPuzzle</title>
+<style>
+  :root {
+    --bg: #FBF9F5;
+    --surface: #FFFFFF;
+    --surface-alt: #F5F3EF;
+    --border: #E4E2DE;
+    --primary: #006C4D;
+    --primary-dim: #69DBAD;
+    --secondary: #A43C12;
+    --tertiary: #00668A;
+    --text: #1B1C1A;
+    --text-dim: #3D4943;
+    --text-mute: #6D7A72;
+    --accent-tip-bg: #E8F5EE;
+    --accent-tip-border: #C7E8D7;
+    --accent-warn-bg: #FFF3EC;
+    --accent-warn-border: #FFD7C2;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-text-size-adjust: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    word-wrap: break-word;
+  }
+  body {
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+  }
+
+  /* ---------- 语言切换：默认中文，切到英文时隐藏中文，反之亦然 ---------- */
+  html[data-lang="zh"] .lang-en { display: none !important; }
+  html[data-lang="en"] .lang-zh { display: none !important; }
+
+  header.brand {
+    padding: 24px 0 16px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .brand-text { flex: 1; min-width: 0; }
+  .brand .eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .brand h1 {
+    margin: 0 0 8px;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.2px;
+  }
+  .brand .meta {
+    color: var(--text-mute);
+    font-size: 13px;
+    margin: 0;
+  }
+  .brand .meta span + span::before {
+    content: " · ";
+    margin: 0 4px;
+    color: var(--border);
+  }
+  .lang-switch {
+    display: inline-flex;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px;
+    flex-shrink: 0;
+  }
+  .lang-switch button {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    padding: 6px 14px;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-mute);
+    border-radius: 999px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+  }
+  .lang-switch button.active {
+    background: var(--primary);
+    color: #fff;
+  }
+
+  .hero {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin-bottom: 24px;
+  }
+  .hero p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 15px;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .feature-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px 18px;
+  }
+  .feature-icon {
+    font-size: 22px;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .feature-card h3 {
+    margin: 0 0 4px;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--primary);
+  }
+  .feature-card p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  section {
+    margin-bottom: 36px;
+  }
+  section > h2 {
+    font-size: 18px;
+    color: var(--primary);
+    margin: 0 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--primary-dim);
+    font-weight: 800;
+    scroll-margin-top: 16px;
+  }
+
+  /* FAQ - details/summary */
+  details {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  details[open] {
+    border-color: var(--primary-dim);
+  }
+  details > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 14px 18px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    position: relative;
+    padding-right: 44px;
+  }
+  details > summary::-webkit-details-marker { display: none; }
+  details > summary::after {
+    content: "+";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1;
+    transition: transform .15s ease;
+  }
+  details[open] > summary::after {
+    content: "−";
+  }
+  details .faq-body {
+    padding: 0 18px 16px;
+    font-size: 14px;
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+  details .faq-body p { margin: 6px 0; }
+  details .faq-body ul, details .faq-body ol {
+    margin: 6px 0;
+    padding-left: 20px;
+  }
+  details .faq-body li { margin: 3px 0; }
+  details .faq-body strong { color: var(--text); }
+
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 22px;
+  }
+  .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .contact-row:last-child { border-bottom: 0; }
+  .contact-row .label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-mute);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    width: 92px;
+    flex-shrink: 0;
+  }
+  .contact-row .value {
+    font-size: 15px;
+    color: var(--text);
+    word-break: break-all;
+  }
+  .contact-row .value a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 700;
+  }
+  .contact-row .value a:hover { text-decoration: underline; }
+  .contact-tip {
+    margin-top: 14px;
+    background: var(--accent-tip-bg);
+    border: 1px solid var(--accent-tip-border);
+    border-left: 4px solid var(--primary);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+  .contact-tip ul { margin: 6px 0 0; padding-left: 20px; }
+  .contact-tip li { margin: 2px 0; }
+
+  footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--text-mute);
+    font-size: 12px;
+    text-align: center;
+    line-height: 1.7;
+  }
+  footer a { color: var(--primary); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 480px) {
+    .features { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 380px) {
+    .container { padding: 24px 16px 64px; }
+    .brand h1 { font-size: 22px; }
+    section > h2 { font-size: 17px; }
+  }
+</style>
+<script>
+  // 早期初始化：避免页面闪烁先显示中文再切英文
+  (function() {
+    try {
+      var p = new URLSearchParams(location.search);
+      var saved = null;
+      try { saved = localStorage.getItem('hanzi-support-lang'); } catch (e) {}
+      var nav = (navigator.language || 'zh').toLowerCase();
+      var defaultLang = nav.indexOf('zh') === 0 ? 'zh' : 'en';
+      var lang = p.get('lang') || saved || defaultLang;
+      if (lang !== 'zh' && lang !== 'en') lang = 'zh';
+      document.documentElement.dataset.lang = lang;
+      document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en';
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<div class="container">
+
+  <header class="brand">
+    <div class="brand-text">
+      <div class="eyebrow">汉字拆拆乐 · HanziPuzzle</div>
+      <h1 class="lang-zh">技术支持</h1>
+      <h1 class="lang-en">Support</h1>
+      <p class="meta">
+        <span class="lang-zh">应用版本 v1.0.0</span>
+        <span class="lang-en">App Version v1.0.0</span>
+        <span class="lang-zh">最后更新 2026-06-04</span>
+        <span class="lang-en">Updated 2026-06-04</span>
+      </p>
+    </div>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" data-lang="zh">中</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <!-- ---------- HERO ---------- -->
+  <section class="hero">
+    <p class="lang-zh">
+      <strong>汉字拆拆乐</strong> 是一款让你通过点选笔画来拆分汉字的休闲解谜游戏。在动态的笔画动画中，你需要识别每一笔属于哪一个偏旁部件，把"明""休""森""桂"等字一笔一笔拆开，理解汉字的构形之美。本页面提供常见问题解答与开发者联系方式。
+    </p>
+    <p class="lang-en">
+      <strong>HanziPuzzle</strong> is a casual puzzle game where you split Chinese characters by tapping individual strokes. As each stroke animates onto the canvas, you decide which radical or component it belongs to, decomposing characters like 明 (sun + moon) or 森 (three trees) one stroke at a time and exploring how Chinese characters are built. This page provides FAQs and developer contact info.
+    </p>
+  </section>
+
+  <!-- ---------- 特性卡片 ---------- -->
+  <section class="features" aria-label="Features">
+    <div class="feature-card">
+      <div class="feature-icon">✏️</div>
+      <h3 class="lang-zh">真实笔画动画</h3>
+      <h3 class="lang-en">Real Stroke Animation</h3>
+      <p class="lang-zh">基于权威笔顺数据集，每个字都按真实书写顺序逐笔展现。</p>
+      <p class="lang-en">Stroke order rendered from an authoritative open dataset (Make Me a Hanzi).</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🧩</div>
+      <h3 class="lang-zh">部件拆分玩法</h3>
+      <h3 class="lang-en">Component Puzzles</h3>
+      <p class="lang-zh">把整字按偏旁拆开，加深对汉字结构的直觉理解。</p>
+      <p class="lang-en">Split each character into its radical components to build structural intuition.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">☁️</div>
+      <h3 class="lang-zh">iCloud 进度同步</h3>
+      <h3 class="lang-en">iCloud Sync</h3>
+      <p class="lang-zh">关卡进度与金币余额自动跨设备同步，换机不丢档。</p>
+      <p class="lang-en">Progress and coin balance sync across your devices via iCloud.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🎁</div>
+      <h3 class="lang-zh">无强制广告</h3>
+      <h3 class="lang-en">Ad-Free</h3>
+      <p class="lang-zh">当前版本不展示广告，仅提供金币内购辅助通关。</p>
+      <p class="lang-en">No ads. Optional in-app coin packs help with hints when stuck.</p>
+    </div>
+  </section>
+
+  <!-- ---------- FAQ ---------- -->
+  <section>
+    <h2 class="lang-zh">常见问题</h2>
+    <h2 class="lang-en">Frequently Asked Questions</h2>
+
+    <!-- ===== 进度 / 金币 ===== -->
+    <details>
+      <summary class="lang-zh">我的关卡进度会不会丢？换设备后还能接着玩吗？</summary>
+      <summary class="lang-en">Will I lose my progress when switching devices?</summary>
+      <div class="faq-body">
+        <p class="lang-zh">不会。关卡进度与金币余额会保存在你设备的 Keychain 与 iCloud 中。只要新设备使用<strong>同一个 Apple ID 并打开 iCloud</strong>，重装应用后即可自动恢复进度。</p>
+        <p class="lang-en">No. Your level progress and coin balance are stored in iOS Keychain and synced via iCloud. As long as your new device is signed in with the <strong>same Apple ID and iCloud is enabled</strong>, your data restores automatically after reinstalling the app.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary class="lang-zh">为什么换设备后，进度还没同步过来？</summary>
+      <summary class="lang-en">Why hasn't my progress synced to a new device yet?</summary>
+      <div class="faq-body">
+        <p class="lang-zh">iCloud 同步通常在几秒到 1 分钟内完成。如果迟迟未同步，请确认：</p>
+        <p class="lang-en">iCloud sync usually completes within a minute. If it doesn't, please check:</p>
+        <ul class="lang-zh">
+          <li>两台设备登录的是同一个 Apple ID</li>
+          <li>系统设置 → Apple ID → iCloud 已开启 <strong>iCloud Drive</strong> 与 <strong>钥匙串</strong></li>
+          <li>设备处于 Wi-Fi 或蜂窝网络下</li>
+          <li>等待几分钟后<strong>完全退出 App 再重新打开</strong></li>
+        </ul>
+        <ul class="lang-en">
+          <li>Both devices are signed into the <strong>same Apple ID</strong></li>
+          <li>Settings → Apple ID → iCloud has both <strong>iCloud Drive</strong> and <strong>Keychain</strong> enabled</li>
+          <li>Device has Wi-Fi or cellular connectivity</li>
+          <li>Force-quit and relaunch the app after waiting a minute</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary class="lang-zh">金币购买成功了，但金币没到账？</summary>
+      <summary class="lang-en">My coin purchase succeeded but coins didn't appear?</summary>
+      <div class="faq-body">
+        <p class="lang-zh">绝大多数情况下，金币会在 Apple 扣款成功的几秒内自动入账。如果迟迟没看到金币：</p>
+        <p class="lang-en">In most cases, coins are credited within seconds of Apple confirming the charge. If they don't appear:</p>
+        <ol class="lang-zh">
+          <li>请保持联网，<strong>完全退出 App 再重新打开</strong>，应用启动时会处理残留交易</li>
+          <li>检查 Apple ID 邮件，确认是否真的扣款（沙盒/家庭共享下可能未真正扣款）</li>
+          <li>如仍未到账，请通过下方邮箱联系我们，<strong>附上 Apple 邮件中的订单号 (Order ID)</strong>，我们将人工核对补发</li>
+        </ol>
+        <ol class="lang-en">
+          <li>Keep network connectivity and <strong>force-quit then relaunch the app</strong> — pending transactions are reprocessed at launch</li>
+          <li>Check your Apple receipt email to confirm the charge actually went through (Sandbox / Family Sharing may not be a real charge)</li>
+          <li>If coins are still missing, email us with the <strong>Order ID from your Apple receipt</strong> and we'll manually verify and re-grant the coins</li>
+        </ol>
+      </div>
+    </details>
+
+    <details>
+      <summary class="lang-zh">购买的金币能退款吗？</summary>
+      <summary class="lang-en">Can I get a refund for my coin purchase?</summary>
+      <div class="faq-body">
+        <p class="lang-zh">所有内购（含金币包）均由 Apple 统一处理。开发者无法直接受理退款。如需申请退款，请前往 <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>，使用购买时的 Apple ID 登录后选择对应订单，按 Apple 的流程提交。</p>
+        <p class="lang-en">All in-app purchases (including coin packs) are handled exclusively by Apple. Developers cannot issue refunds directly. To request one, please visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>, sign in with the same Apple ID, locate the order and follow Apple's process.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary class="lang-zh">"恢复购买"按钮是做什么的？我消耗型金币能恢复吗？</summary>
+      <summary class="lang-en">What does "Restore Purchases" do? Will it bring back my coins?</summary>
+      <div class="faq-body">
+        <p class="lang-zh">金币包属于 <strong>消耗型 (Consumable)</strong> 商品，按 Apple 政策不支持"恢复购买"——已使用过的金币不会被退回也不会被复原。"恢复购买"按钮主要用于未来的非消耗型权益（如解锁高级关卡包等）。如果你换了新设备，已购买但<strong>未使用</strong>的金币余额会通过 iCloud 同步而非"恢复购买"机制带过来。</p>
+        <p class="lang-en">Coin packs are <strong>consumable</strong> products. Per Apple's policy, consumables cannot be restored — once you've spent them, they're gone. The "Restore Purchases" button is reserved for future non-consumable items (e.g., level-pack unlocks). If you switch devices, your <strong>unspent</strong> coin balance carries over via iCloud sync, not via Restore.</p>
+      </div>
+    </details>
+
+    <!-- ===== 玩法 / 笔画 ===== -->
+    <details>
+      <summary class="lang-zh">某个字的笔顺好像和我学的不一样？</summary>
+      <summary class="lang-en">A character's stroke order looks different from what I learned?</summary>
+      <div class="faq-body">
+        <p class="lang-zh">游戏中的笔顺数据来自开源数据集 <a href="https://github.com/skishore/makemeahanzi" target="_blank" rel="noopener">Make Me a Hanzi</a>，整体参照大陆通行的笔顺规范。少数字在地区习惯（如港台 vs 大陆）、以及"先撇后捺 vs 先竖后横"等细节上可能存在差异。如果你认为某个字的笔顺确实有错，欢迎邮件反馈具体字与建议笔顺，我们会人工核对。</p>
+        <p class="lang-en">Stroke order data comes from the open-source <a href="https://github.com/skishore/makemeahanzi" target="_blank" rel="noopener">Make Me a Hanzi</a> dataset and follows mainland Chinese conventions. Some characters have legitimate regional variations (e.g., Mainland vs. Taiwan/HK ordering). If you believe a specific character's stroke order is wrong, please email us the character and your suggested order — we'll review it.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary class="lang-zh">我点了一笔，结果系统判我错，怎么回事？</summary>
+      <summary class="lang-en">I tapped a stroke but the game marked it wrong — why?</summary>
+      <div class="faq-body">
+        <p class="lang-zh">每一关都有<strong>预设的拆字方案</strong>（来自工程内的 components 数据），并非"任何方式拆开都算对"。例如"明 = 日 + 月"，但游戏不会接受"明 = 日 + 一 + 几"。如果你认为某个字存在多种合理拆法且当前方案不是最优，欢迎反馈，我们会评估增加备选方案。</p>
+        <p class="lang-en">Each level has a <strong>predefined decomposition</strong> from our component database. We don't accept arbitrary splits — for example "明 = 日 + 月" is correct, but "明 = 日 + 一 + 几" isn't. If you have a reasonable alternative split that's currently rejected, please email us; we evaluate community-suggested alternatives for inclusion.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary class="lang-zh">没金币了，怎么办？</summary>
+      <summary class="lang-en">I'm out of coins — what now?</summary>
+      <div class="faq-body">
+        <p class="lang-zh">你有几种途径继续玩：</p>
+        <p class="lang-en">You have a few options:</p>
+        <ul class="lang-zh">
+          <li>继续通关，每完成一关都会奖励金币</li>
+          <li>不使用"提示"和"跳过"也完全可以推进，只是会更具挑战性</li>
+          <li>如果想加速，可以前往金币商店购买金币包</li>
+        </ul>
+        <ul class="lang-en">
+          <li>Keep playing — completing levels grants coin rewards</li>
+          <li>You can fully progress without using Hints or Skips, it's just harder</li>
+          <li>To skip the grind, the in-game shop offers optional coin packs</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- ===== 隐私 / 账号 ===== -->
+    <details>
+      <summary class="lang-zh">应用会收集我的个人信息吗？</summary>
+      <summary class="lang-en">Does the app collect my personal data?</summary>
+      <div class="faq-body">
+        <p class="lang-zh">不会。汉字拆拆乐<strong>不要求注册账号</strong>，不收集姓名、手机号、邮箱、位置、相册、麦克风等任何个人信息。所有游戏数据仅存储在你设备的 Keychain 与你 Apple ID 的 iCloud 中。详情请见 <a href="https://jianniou.github.io/yizhanyuanyue.github.io/hanzi_privacy_policy.html" target="_blank" rel="noopener">隐私政策</a>。</p>
+        <p class="lang-en">No. HanziPuzzle <strong>requires no account</strong> and does not collect your name, phone number, email, location, photos, microphone or any personal data. Game data lives only in your device's Keychain and your Apple ID's iCloud. See our <a href="https://jianniou.github.io/yizhanyuanyue.github.io/hanzi_privacy_policy.html" target="_blank" rel="noopener">Privacy Policy</a> for details.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary class="lang-zh">我想清空所有进度重新开始</summary>
+      <summary class="lang-en">I want to wipe all progress and start over</summary>
+      <div class="faq-body">
+        <p class="lang-zh">在 App 内"设置"页中提供了"清空进度"入口。请注意：清空操作会同时清除该设备 Keychain 与 iCloud 中的关卡记录，<strong>无法撤销</strong>。金币余额不会被清空（属于已购虚拟货币）。</p>
+        <p class="lang-en">The in-app Settings page has a "Reset Progress" option. Note that this clears level records both locally (Keychain) and in iCloud, and <strong>cannot be undone</strong>. Coin balance is not reset (already-purchased virtual currency).</p>
+      </div>
+    </details>
+
+    <!-- ===== 设备 / 兼容 ===== -->
+    <details>
+      <summary class="lang-zh">支持哪些设备和系统？</summary>
+      <summary class="lang-en">What devices and OS versions are supported?</summary>
+      <div class="faq-body">
+        <p class="lang-zh">需要 <strong>iOS 14.0 或以上</strong>，支持所有 iPhone 与 iPad。当前版本仅竖屏。</p>
+        <p class="lang-en">Requires <strong>iOS 14.0 or later</strong>, available on all iPhone and iPad models. Portrait orientation only in the current version.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary class="lang-zh">支持 Apple Watch 或 macOS 吗？</summary>
+      <summary class="lang-en">Is there an Apple Watch or macOS version?</summary>
+      <div class="faq-body">
+        <p class="lang-zh">暂不提供 watchOS 与 macOS 独立版本。如果你的 Mac 是 Apple Silicon (M 系列芯片)，可以在 Mac App Store 搜索 iOS App 并直接安装运行。</p>
+        <p class="lang-en">No standalone watchOS or macOS versions yet. If you have an Apple Silicon (M-series) Mac, you can install and run the iOS app directly from the Mac App Store.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ---------- 联系我们 ---------- -->
+  <section>
+    <h2 class="lang-zh">联系我们</h2>
+    <h2 class="lang-en">Contact Us</h2>
+
+    <div class="contact-card">
+      <div class="contact-row">
+        <div class="label">Email</div>
+        <div class="value"><a href="mailto:410869924@qq.com?subject=HanziPuzzle%20Support">410869924@qq.com</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="label lang-zh">响应时间</div>
+        <div class="label lang-en">Response</div>
+        <div class="value lang-zh">通常 1–3 个工作日内回复（节假日可能延后）</div>
+        <div class="value lang-en">Typically within 1–3 business days (holidays may delay)</div>
+      </div>
+      <div class="contact-row">
+        <div class="label lang-zh">服务语言</div>
+        <div class="label lang-en">Languages</div>
+        <div class="value lang-zh">中文 / English</div>
+        <div class="value lang-en">English / 中文</div>
+      </div>
+
+      <div class="contact-tip">
+        <strong class="lang-zh">为了更快帮你解决问题，邮件中请尽量附上：</strong>
+        <strong class="lang-en">To help us resolve your issue faster, please include:</strong>
+        <ul class="lang-zh">
+          <li>设备型号与系统版本（如 iPhone 15 Pro / iOS 18.2）</li>
+          <li>应用版本号（设置 → 关于）</li>
+          <li>问题描述、出现步骤、最好附上截图或屏幕录制</li>
+          <li>如涉及内购：Apple 邮件里的<strong>订单号 (Order ID)</strong></li>
+        </ul>
+        <ul class="lang-en">
+          <li>Device model and OS version (e.g. iPhone 15 Pro / iOS 18.2)</li>
+          <li>App version (Settings → About)</li>
+          <li>Description of the issue, steps to reproduce, screenshots or screen recording if possible</li>
+          <li>For purchase issues: the <strong>Order ID</strong> from your Apple receipt email</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>
+      <span class="lang-zh">© 2026 汉字拆拆乐 · HanziPuzzle. All rights reserved.</span>
+      <span class="lang-en">© 2026 HanziPuzzle. All rights reserved.</span>
+    </p>
+    <p>
+      <a href="https://jianniou.github.io/yizhanyuanyue.github.io/hanzi_privacy_policy.html" target="_blank" rel="noopener">
+        <span class="lang-zh">隐私政策</span><span class="lang-en">Privacy Policy</span>
+      </a>
+      &nbsp;·&nbsp;
+      <a href="hanzi_terms.html">
+        <span class="lang-zh">用户协议</span><span class="lang-en">Terms of Service</span>
+      </a>
+    </p>
+  </footer>
+
+</div>
+
+<script>
+  // 语言切换按钮
+  (function() {
+    var buttons = document.querySelectorAll('.lang-switch button');
+    function applyLang(lang) {
+      if (lang !== 'zh' && lang !== 'en') lang = 'zh';
+      document.documentElement.dataset.lang = lang;
+      document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en';
+      try { localStorage.setItem('hanzi-support-lang', lang); } catch (e) {}
+      buttons.forEach(function(b) {
+        b.classList.toggle('active', b.dataset.lang === lang);
+      });
+    }
+    buttons.forEach(function(b) {
+      b.addEventListener('click', function() { applyLang(b.dataset.lang); });
+    });
+    // 初始按钮高亮
+    applyLang(document.documentElement.dataset.lang || 'zh');
+  })();
+</script>
+</body>
+</html>
