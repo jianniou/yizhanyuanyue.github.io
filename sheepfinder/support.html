@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>找羊 Sheep Finder - 技术支持 Support</title>
+  <style>
+    :root {
+      --bg: #f6fbef;
+      --ink: #2d2418;
+      --muted: #6f604e;
+      --green: #4f9d2f;
+      --green-dark: #2f6f1f;
+      --gold: #f5b84b;
+      --line: #eadcc0;
+      --soft: #fff4d8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(255, 223, 124, 0.36), transparent 30rem),
+        linear-gradient(180deg, #eaf8ff 0%, var(--bg) 42%, #eef8e4 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      line-height: 1.72;
+    }
+
+    main {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 56px;
+    }
+
+    .hero,
+    section {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 12px 28px rgba(105, 83, 38, 0.1);
+    }
+
+    .hero {
+      padding: 30px 28px;
+      background: linear-gradient(135deg, rgba(255, 246, 219, 0.96), rgba(236, 250, 228, 0.96));
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      color: var(--green-dark);
+      background: rgba(255, 255, 255, 0.72);
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    h1 {
+      margin: 14px 0 8px;
+      font-size: clamp(30px, 6vw, 50px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 23px;
+      color: var(--green-dark);
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 18px;
+    }
+
+    p {
+      margin: 8px 0;
+    }
+
+    a {
+      color: var(--green-dark);
+      font-weight: 800;
+      text-decoration-thickness: 2px;
+    }
+
+    section {
+      margin-top: 16px;
+      padding: 22px;
+    }
+
+    ul {
+      margin: 8px 0;
+      padding-left: 1.25rem;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    .quick {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .quick a,
+    .quick div {
+      display: block;
+      min-height: 92px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.82);
+      text-decoration: none;
+    }
+
+    .quick strong {
+      display: block;
+      color: var(--green-dark);
+      font-size: 17px;
+    }
+
+    .quick span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .note {
+      padding: 12px 14px;
+      border-left: 4px solid var(--gold);
+      border-radius: 10px;
+      background: var(--soft);
+      color: var(--muted);
+    }
+
+    .english {
+      margin-top: 42px;
+      padding-top: 20px;
+      border-top: 2px dashed var(--line);
+    }
+
+    .footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 720px) {
+      main {
+        width: min(100% - 20px, 920px);
+        padding-top: 18px;
+      }
+
+      .hero,
+      section {
+        padding: 18px;
+        border-radius: 16px;
+      }
+
+      .quick {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="hero">
+      <div class="badge">🐑 Sheep Finder / 找羊</div>
+      <h1>技术支持</h1>
+      <p>欢迎使用《找羊》。如果你在游戏、关卡、金币、内购或设置中遇到问题，可以通过本页面找到帮助方式。</p>
+      <div class="quick">
+        <a href="mailto:support@example.com">
+          <strong>联系支持</strong>
+          <span>support@example.com</span>
+        </a>
+        <a href="privacy-policy.html">
+          <strong>隐私政策</strong>
+          <span>查看隐私与数据说明</span>
+        </a>
+        <div>
+          <strong>当前版本</strong>
+          <span>1.0.0</span>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <h2>常见问题</h2>
+      <h3>1. 关卡无法进入或显示锁定怎么办？</h3>
+      <p>普通关卡需要按顺序通关解锁。完成前一关后，下一关会自动解锁。如果你购买了“整 App 买断”，请在商店页面点击“恢复购买”。</p>
+
+      <h3>2. 金币没有到账怎么办？</h3>
+      <p>请确认 App Store 购买已经完成。如果购买成功但金币未到账，请重新进入商店页面，等待商品状态刷新；仍有问题请联系我们，并提供购买时间、商品类型和设备型号。</p>
+
+      <h3>3. 整 App 买断如何恢复？</h3>
+      <p>进入游戏首页的商店页面，点击“恢复购买”。恢复购买主要适用于非消耗型商品，例如整 App 买断。金币包属于消耗型商品，Apple 通常不支持恢复。</p>
+
+      <h3>4. 每日签到或每日挑战没有更新怎么办？</h3>
+      <p>每日内容会根据设备日期计算。请确认设备日期和时区设置正确，然后重新打开 App。</p>
+
+      <h3>5. 背景音乐或音效如何关闭？</h3>
+      <p>进入设置页面，可以分别关闭“音效”和“背景音乐”。</p>
+    </section>
+
+    <section>
+      <h2>联系我们</h2>
+      <p>如果以上内容没有解决你的问题，请发送邮件给我们：</p>
+      <p><strong>支持邮箱：</strong><a href="mailto:support@example.com">support@example.com</a></p>
+      <p>为了更快定位问题，建议在邮件中包含：</p>
+      <ul>
+        <li>设备型号和 iOS 版本</li>
+        <li>App 版本号</li>
+        <li>问题发生的页面或关卡</li>
+        <li>问题截图或简单描述</li>
+        <li>如果是内购问题，请提供购买时间和商品类型，不要发送银行卡、密码等敏感信息</li>
+      </ul>
+      <p class="note">上架前请将 support@example.com 替换为你的真实技术支持邮箱。</p>
+    </section>
+
+    <section>
+      <h2>服务说明</h2>
+      <p>我们会尽力处理用户反馈，但无法保证所有设备、系统版本或网络环境下的问题都能立即解决。App Store 付款、退款和购买记录由 Apple 处理，如涉及退款，请优先通过 Apple 官方渠道申请。</p>
+    </section>
+
+    <div class="english">
+      <header class="hero">
+        <div class="badge">🐑 Sheep Finder / 找羊</div>
+        <h1>Support</h1>
+        <p>Welcome to Sheep Finder. If you have questions about gameplay, levels, coins, in-app purchases, or settings, this page can help.</p>
+        <div class="quick">
+          <a href="mailto:support@example.com">
+            <strong>Contact Support</strong>
+            <span>support@example.com</span>
+          </a>
+          <a href="privacy-policy.html">
+            <strong>Privacy Policy</strong>
+            <span>View privacy and data information</span>
+          </a>
+          <div>
+            <strong>Current Version</strong>
+            <span>1.0.0</span>
+          </div>
+        </div>
+      </header>
+
+      <section>
+        <h2>FAQ</h2>
+        <h3>1. Why is a level locked?</h3>
+        <p>Normal levels are unlocked in order. Complete the previous level to unlock the next one. If you purchased the full app unlock, open the Store page and tap Restore Purchases.</p>
+
+        <h3>2. My coins did not arrive. What should I do?</h3>
+        <p>Please make sure the App Store purchase was completed. If the purchase succeeded but coins were not delivered, reopen the Store page and wait for it to refresh. If the issue continues, contact us with the purchase time, product type, and device model.</p>
+
+        <h3>3. How do I restore the full app unlock?</h3>
+        <p>Open the Store page from the home screen and tap Restore Purchases. Restore purchases mainly applies to non-consumable products such as the full app unlock. Coin packs are consumable products and usually cannot be restored by Apple.</p>
+
+        <h3>4. Daily check-in or daily challenge did not update.</h3>
+        <p>Daily content is calculated from your device date. Please check your device date and time zone, then reopen the app.</p>
+
+        <h3>5. How do I turn off music or sound effects?</h3>
+        <p>Open Settings. Sound Effects and Background Music can be turned off separately.</p>
+      </section>
+
+      <section>
+        <h2>Contact Us</h2>
+        <p>If the FAQ does not solve your issue, please email us:</p>
+        <p><strong>Support Email:</strong> <a href="mailto:support@example.com">support@example.com</a></p>
+        <p>To help us investigate faster, please include:</p>
+        <ul>
+          <li>Device model and iOS version</li>
+          <li>App version</li>
+          <li>The page or level where the issue happened</li>
+          <li>A screenshot or short description</li>
+          <li>For purchase issues, include purchase time and product type. Do not send passwords, card numbers, or other sensitive information.</li>
+        </ul>
+        <p class="note">Please replace support@example.com with your real support email before publishing.</p>
+      </section>
+
+      <section>
+        <h2>Service Notes</h2>
+        <p>We will do our best to respond to user feedback, but some device, system, or network issues may take time to resolve. App Store payments, refunds, and purchase records are handled by Apple. For refunds, please use Apple official channels first.</p>
+      </section>
+    </div>
+
+    <p class="footer">© 2026 Sheep Finder. All rights reserved.</p>
+  </main>
+</body>
+</html>
