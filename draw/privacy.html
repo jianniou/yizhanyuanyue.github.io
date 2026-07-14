@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#159fe8">
+  <meta name="description" content="布兜学画画隐私政策">
+  <title>隐私政策｜布兜学画画</title>
+  <style>
+    :root {
+      --blue: #159fe8;
+      --blue-dark: #075985;
+      --ink: #203044;
+      --muted: #5f7185;
+      --line: #d8e8f2;
+      --surface: #ffffff;
+      --soft-blue: #eef9ff;
+      --soft-green: #effbea;
+      --green: #3f9b45;
+      --orange: #ff9f1c;
+      --pink: #f05d8b;
+      --purple: #8b68d8;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #f7fbfd;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      font-size: 16px;
+      line-height: 1.8;
+      letter-spacing: 0;
+    }
+
+    a { color: #0879b9; }
+    a:hover { color: var(--blue-dark); }
+
+    .skip-link {
+      position: fixed;
+      top: 8px;
+      left: 8px;
+      z-index: 10;
+      padding: 8px 12px;
+      color: #fff;
+      background: var(--blue-dark);
+      transform: translateY(-150%);
+    }
+
+    .skip-link:focus { transform: translateY(0); }
+
+    header {
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background: var(--blue);
+      border-bottom: 8px solid #ffcf33;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      right: -44px;
+      bottom: -66px;
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      background: #73d54a;
+      box-shadow: -170px 52px 0 #ffcf33, -320px 76px 0 #f36b93;
+      opacity: .96;
+    }
+
+    .header-inner,
+    main,
+    .footer-inner {
+      width: min(920px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .header-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      min-height: 230px;
+      padding: 36px 0 44px;
+    }
+
+    .app-icon {
+      width: 112px;
+      height: 112px;
+      flex: 0 0 auto;
+      border: 5px solid rgba(255, 255, 255, .92);
+      border-radius: 24px;
+      object-fit: cover;
+      box-shadow: 0 10px 24px rgba(3, 74, 116, .25);
+    }
+
+    h1, h2, h3 { margin-top: 0; line-height: 1.35; }
+
+    h1 {
+      margin-bottom: 8px;
+      font-size: clamp(32px, 6vw, 48px);
+      font-weight: 800;
+    }
+
+    .app-name {
+      margin: 0 0 6px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .meta {
+      margin: 0;
+      color: rgba(255, 255, 255, .9);
+      font-size: 14px;
+    }
+
+    main { padding: 36px 0 64px; }
+
+    .summary {
+      margin-bottom: 30px;
+      padding: 22px 24px;
+      background: var(--soft-green);
+      border-left: 6px solid var(--green);
+      border-radius: 8px;
+    }
+
+    .summary strong { color: #236f31; }
+
+    nav {
+      margin-bottom: 34px;
+      padding: 20px 24px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    nav h2 { margin-bottom: 12px; font-size: 20px; }
+
+    nav ul {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 24px;
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    section {
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+      scroll-margin-top: 16px;
+    }
+
+    section:first-of-type { border-top: 0; }
+
+    h2 {
+      margin-bottom: 14px;
+      color: var(--blue-dark);
+      font-size: 25px;
+    }
+
+    h3 {
+      margin: 24px 0 8px;
+      color: #34495e;
+      font-size: 18px;
+    }
+
+    p { margin: 0 0 14px; }
+
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+
+    li + li { margin-top: 8px; }
+
+    .data-table-wrap {
+      overflow-x: auto;
+      margin: 18px 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    table {
+      width: 100%;
+      min-width: 620px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 14px 16px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th {
+      color: var(--blue-dark);
+      background: var(--soft-blue);
+      font-weight: 700;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .notice {
+      margin: 18px 0;
+      padding: 18px 20px;
+      background: #fff8e8;
+      border-left: 5px solid var(--orange);
+      border-radius: 8px;
+    }
+
+    .children {
+      padding: 24px;
+      background: #fff3f8;
+      border: 1px solid #f6c8d8;
+      border-radius: 8px;
+    }
+
+    .contact {
+      padding: 22px 24px;
+      background: var(--soft-blue);
+      border: 1px solid #bfe4f7;
+      border-radius: 8px;
+    }
+
+    .contact p:last-child { margin-bottom: 0; }
+
+    footer {
+      color: #eaf7ff;
+      background: #17445f;
+    }
+
+    .footer-inner {
+      padding: 24px 0;
+      font-size: 14px;
+    }
+
+    .footer-inner p { margin: 0; }
+
+    @media (max-width: 640px) {
+      .header-inner,
+      main,
+      .footer-inner { width: min(100% - 28px, 920px); }
+
+      .header-inner {
+        align-items: flex-start;
+        min-height: 210px;
+        padding-top: 30px;
+      }
+
+      .app-icon {
+        width: 76px;
+        height: 76px;
+        border-radius: 18px;
+      }
+
+      header::after { opacity: .55; }
+      nav ul { grid-template-columns: 1fr; }
+      section { padding: 25px 0; }
+      h2 { font-size: 22px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到正文</a>
+
+  <header>
+    <div class="header-inner">
+      <img class="app-icon" src="KidsColoring/Assets.xcassets/AppIcon.appiconset/1024.png" alt="布兜学画画 App 图标">
+      <div>
+        <p class="app-name">布兜学画画</p>
+        <h1>隐私政策</h1>
+        <p class="meta">生效日期：2026年7月14日　更新日期：2026年7月14日</p>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="summary">
+      <strong>隐私摘要：</strong>“布兜学画画”无需注册账号，不包含广告或用户追踪功能。绘画作品、涂色进度和偏好设置默认仅保存在您的设备上，不会上传至我们的服务器。只有在您主动保存或分享作品时，系统才会执行相应操作。
+    </div>
+
+    <nav aria-label="隐私政策目录">
+      <h2>目录</h2>
+      <ul>
+        <li><a href="#scope">适用范围</a></li>
+        <li><a href="#data">我们如何处理数据</a></li>
+        <li><a href="#permissions">系统权限</a></li>
+        <li><a href="#sharing">共享与对外提供</a></li>
+        <li><a href="#storage">存储与删除</a></li>
+        <li><a href="#children">儿童隐私保护</a></li>
+        <li><a href="#security">安全保护</a></li>
+        <li><a href="#rights">您的权利</a></li>
+        <li><a href="#changes">政策更新</a></li>
+        <li><a href="#contact">联系我们</a></li>
+      </ul>
+    </nav>
+
+    <section id="scope">
+      <h2>一、适用范围</h2>
+      <p>本隐私政策适用于由 <strong>Qi Yuan</strong>（以下简称“我们”）运营的“布兜学画画”App，说明我们在提供儿童绘画、涂色、作品保存和分享功能时如何处理信息。</p>
+      <p>请家长或其他监护人在儿童使用本 App 前共同阅读并理解本政策，并在同意本政策后指导儿童使用。</p>
+    </section>
+
+    <section id="data">
+      <h2>二、我们如何处理数据</h2>
+      <p>本 App 的核心功能可以离线使用。我们不要求用户注册、登录或提供姓名、手机号、电子邮箱、身份证件等身份信息，也未接入广告、行为分析或第三方统计 SDK。</p>
+
+      <div class="data-table-wrap" role="region" aria-label="数据处理说明" tabindex="0">
+        <table>
+          <thead>
+            <tr>
+              <th>数据类型</th>
+              <th>用途</th>
+              <th>处理方式</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>绘画和涂色作品</td>
+              <td>展示、继续编辑和管理作品</td>
+              <td>仅保存在设备本地</td>
+            </tr>
+            <tr>
+              <td>涂色进度及作品信息</td>
+              <td>恢复编辑进度、显示作品名称与创建时间</td>
+              <td>仅保存在设备本地</td>
+            </tr>
+            <tr>
+              <td>年龄模式、声音和触觉偏好</td>
+              <td>提供适合年龄的界面并记住用户设置</td>
+              <td>仅保存在设备本地</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>上述信息不会由本 App 上传到我们的服务器，因此不属于我们从设备收集的数据。App Store、iOS 系统或用户主动选择的其他服务可能依其各自规则处理必要信息，其处理行为不由我们控制。</p>
+    </section>
+
+    <section id="permissions">
+      <h2>三、系统权限</h2>
+      <h3>相册写入权限</h3>
+      <p>当用户主动点击“保存到相册”时，本 App 会申请相册的<strong>仅添加</strong>权限，用于将当前作品写入系统相册。本 App 不会通过该权限读取、扫描或上传相册中的其他照片。</p>
+      <p>拒绝授权不会影响绘画、涂色和设备内作品管理等核心功能，但无法将作品保存到系统相册。用户可随时在 iOS“设置”中调整该权限。</p>
+
+      <div class="notice">
+        本 App 不申请定位、通讯录、摄像头、麦克风或跨 App 跟踪权限。
+      </div>
+    </section>
+
+    <section id="sharing">
+      <h2>四、共享、转让与公开披露</h2>
+      <p>我们不会出售、出租、交换或向第三方提供用户个人信息，也不会将作品上传至我们的服务器。</p>
+      <p>当用户主动点击“分享”时，本 App 会调用 iOS 系统分享面板。只有在用户自行选择接收方或第三方 App 并确认后，所选作品才会交由相应服务处理。相关服务如何处理数据，应以其隐私政策为准。建议儿童在家长或监护人的指导下使用分享功能，避免分享包含姓名、住址、学校等个人信息的内容。</p>
+      <p>除非法律法规另有要求，或为保护用户及公众的人身财产安全所必需，我们不会公开披露用户信息。</p>
+    </section>
+
+    <section id="storage">
+      <h2>五、数据存储与删除</h2>
+      <ul>
+        <li>作品、涂色进度及偏好设置存储在当前设备的 App 本地空间内。</li>
+        <li>用户可以在作品页面删除单个作品，也可以在 App 设置中清除全部作品。</li>
+        <li>卸载本 App 通常会删除 App 本地空间中的作品、进度和设置。</li>
+        <li>已经保存到系统相册或通过第三方服务分享的副本，不会随 App 内删除或卸载而自动消失，需要用户在系统相册或相应第三方服务中自行删除。</li>
+      </ul>
+    </section>
+
+    <section id="children">
+      <div class="children">
+        <h2>六、儿童隐私保护</h2>
+        <p>本 App 面向儿童用户。我们坚持数据最小化原则，不要求儿童创建账号，不主动收集儿童的身份信息、联系方式、位置、设备标识符或行为分析数据，不展示个性化广告，也不进行跨 App 跟踪。</p>
+        <p>未满14周岁的儿童应在家长或其他监护人的陪同和指导下使用本 App。家长或监护人应帮助儿童正确使用保存与分享功能，不应允许儿童通过作品或第三方分享渠道披露个人敏感信息。</p>
+        <p>如果家长或监护人认为儿童通过本 App 相关功能不当披露了个人信息，请通过本政策末尾的联系方式联系我们。对于我们能够控制的部分，我们会在核实后依法协助处理。</p>
+      </div>
+    </section>
+
+    <section id="security">
+      <h2>七、安全保护</h2>
+      <p>我们通过减少数据处理、优先采用设备本地存储以及仅在功能需要时申请最小权限等方式保护用户隐私。请妥善保管设备并使用系统提供的设备锁定功能。因用户主动通过系统分享面板向第三方提供作品而产生的数据处理，由相应第三方依据其规则负责。</p>
+    </section>
+
+    <section id="rights">
+      <h2>八、您的权利</h2>
+      <p>用户及其监护人可以通过以下方式管理相关信息：</p>
+      <ul>
+        <li>在作品页面查看或删除设备内保存的作品；</li>
+        <li>在 App 设置中清除全部作品；</li>
+        <li>在 iOS“设置”中撤回或变更相册写入权限；</li>
+        <li>通过卸载 App 删除保存在 App 本地空间中的信息；</li>
+        <li>通过下方邮箱咨询本政策或提出隐私相关请求。</li>
+      </ul>
+      <p>由于本 App 不设账号且不向我们的服务器上传用户数据，我们通常无法从服务器查询、导出或删除与特定用户对应的数据。</p>
+    </section>
+
+    <section id="changes">
+      <h2>九、政策更新</h2>
+      <p>当 App 功能、数据处理方式或适用法律法规发生变化时，我们可能更新本政策。更新后的政策会标明新的更新日期；如变更对用户权益产生重大影响，我们会通过适当方式提示用户或监护人。未经监护人同意，我们不会降低本政策项下对儿童个人信息的保护程度。</p>
+    </section>
+
+    <section id="contact">
+      <h2>十、联系我们</h2>
+      <div class="contact">
+        <p><strong>运营主体：</strong>Qi Yuan</p>
+        <p><strong>应用名称：</strong>布兜学画画</p>
+        <p><strong>联系邮箱：</strong><a href="mailto:410869924@qq.com">410869924@qq.com</a></p>
+        <p>如您对本政策、儿童隐私保护或数据处理有任何疑问、意见或请求，请通过上述邮箱联系我们。我们会在核实相关情况后，于法律法规要求的合理期限内处理并回复。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>© 2026 Qi Yuan · 布兜学画画</p>
+    </div>
+  </footer>
+</body>
+</html>
