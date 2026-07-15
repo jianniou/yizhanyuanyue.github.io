@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#159fe8">
+  <meta name="description" content="布兜学画画技术支持与常见问题">
+  <title>技术支持｜布兜学画画</title>
+  <style>
+    :root {
+      --blue: #159fe8;
+      --blue-dark: #075985;
+      --green: #58b947;
+      --orange: #ff9f1c;
+      --pink: #f05d8b;
+      --ink: #203044;
+      --muted: #617386;
+      --line: #d8e8f2;
+      --surface: #ffffff;
+      --soft-blue: #eef9ff;
+      --soft-green: #f0faed;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #f7fbfd;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      letter-spacing: 0;
+    }
+
+    a { color: #0879b9; }
+    a:hover { color: var(--blue-dark); }
+
+    .skip-link {
+      position: fixed;
+      top: 8px;
+      left: 8px;
+      z-index: 10;
+      padding: 8px 12px;
+      color: #fff;
+      background: var(--blue-dark);
+      transform: translateY(-150%);
+    }
+
+    .skip-link:focus { transform: translateY(0); }
+
+    header {
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background: var(--blue);
+      border-bottom: 8px solid #ffcf33;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      right: -42px;
+      bottom: -72px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: -178px 58px 0 #ffcf33, -332px 80px 0 var(--pink);
+      opacity: .95;
+    }
+
+    .header-inner,
+    main,
+    .footer-inner {
+      width: min(920px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .header-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      min-height: 230px;
+      padding: 36px 0 44px;
+    }
+
+    .app-icon {
+      width: 112px;
+      height: 112px;
+      flex: 0 0 auto;
+      border: 5px solid rgba(255, 255, 255, .92);
+      border-radius: 24px;
+      object-fit: cover;
+      box-shadow: 0 10px 24px rgba(3, 74, 116, .25);
+    }
+
+    h1, h2, h3 { margin-top: 0; line-height: 1.35; }
+
+    h1 {
+      margin-bottom: 8px;
+      font-size: clamp(32px, 6vw, 48px);
+      font-weight: 800;
+    }
+
+    .app-name {
+      margin: 0 0 6px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: rgba(255, 255, 255, .92);
+      font-size: 15px;
+    }
+
+    main { padding: 36px 0 64px; }
+
+    .welcome {
+      margin-bottom: 32px;
+      padding: 22px 24px;
+      background: var(--soft-green);
+      border-left: 6px solid var(--green);
+      border-radius: 8px;
+    }
+
+    .welcome p:last-child { margin-bottom: 0; }
+
+    h2 {
+      margin-bottom: 16px;
+      color: var(--blue-dark);
+      font-size: 25px;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      color: #34495e;
+      font-size: 18px;
+    }
+
+    p { margin: 0 0 14px; }
+
+    ul, ol {
+      margin: 8px 0 0;
+      padding-left: 24px;
+    }
+
+    li + li { margin-top: 7px; }
+
+    section {
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .quick-link {
+      display: flex;
+      align-items: center;
+      min-height: 68px;
+      padding: 14px 16px;
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .quick-link:hover {
+      color: var(--blue-dark);
+      border-color: #92d3f4;
+      background: var(--soft-blue);
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    details {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    summary {
+      position: relative;
+      padding: 18px 52px 18px 20px;
+      color: #274158;
+      cursor: pointer;
+      font-weight: 750;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: "+";
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      color: var(--blue);
+      font-size: 28px;
+      line-height: 1;
+      transform: translateY(-50%);
+    }
+
+    details[open] summary::after { content: "−"; }
+
+    .answer {
+      padding: 0 20px 20px;
+      color: var(--muted);
+      border-top: 1px solid #edf3f7;
+    }
+
+    .answer p:first-child,
+    .answer ol:first-child,
+    .answer ul:first-child { margin-top: 16px; }
+
+    .privacy-row,
+    .contact {
+      padding: 22px 24px;
+      border-radius: 8px;
+    }
+
+    .privacy-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      background: #fff7e8;
+      border: 1px solid #f5d89f;
+    }
+
+    .privacy-row p { margin: 0; }
+
+    .button-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 9px 18px;
+      color: #fff;
+      background: var(--blue);
+      border-radius: 8px;
+      font-weight: 750;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .button-link:hover { color: #fff; background: var(--blue-dark); }
+
+    .contact {
+      background: var(--soft-blue);
+      border: 1px solid #bfe4f7;
+    }
+
+    .contact p:last-child { margin-bottom: 0; }
+
+    footer {
+      color: #eaf7ff;
+      background: #17445f;
+    }
+
+    .footer-inner {
+      padding: 24px 0;
+      font-size: 14px;
+    }
+
+    .footer-inner p { margin: 0; }
+
+    @media (max-width: 720px) {
+      .quick-links { grid-template-columns: 1fr; }
+      .privacy-row { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (max-width: 640px) {
+      .header-inner,
+      main,
+      .footer-inner { width: min(100% - 28px, 920px); }
+
+      .header-inner {
+        align-items: flex-start;
+        min-height: 210px;
+        padding-top: 30px;
+      }
+
+      .app-icon {
+        width: 76px;
+        height: 76px;
+        border-radius: 18px;
+      }
+
+      header::after { opacity: .55; }
+      section { padding: 25px 0; }
+      h2 { font-size: 22px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到正文</a>
+
+  <header>
+    <div class="header-inner">
+      <img class="app-icon" src="KidsColoring/Assets.xcassets/AppIcon.appiconset/1024.png" alt="布兜学画画 App 图标">
+      <div>
+        <p class="app-name">布兜学画画</p>
+        <h1>技术支持</h1>
+        <p class="subtitle">使用帮助、常见问题与联系我们</p>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="welcome">
+      <p><strong>欢迎来到布兜学画画技术支持页面。</strong></p>
+      <p>这里整理了涂色、作品保存、声音设置和隐私权限等常见问题。如果仍需帮助，可以通过页面底部的邮箱联系我们。</p>
+    </div>
+
+    <section aria-labelledby="quick-title">
+      <h2 id="quick-title">快速帮助</h2>
+      <div class="quick-links">
+        <a class="quick-link" href="#coloring">涂色与画笔</a>
+        <a class="quick-link" href="#photos">保存到相册</a>
+        <a class="quick-link" href="#sound">音乐与音效</a>
+      </div>
+    </section>
+
+    <section aria-labelledby="faq-title">
+      <h2 id="faq-title">常见问题</h2>
+      <div class="faq-list">
+        <details id="coloring" open>
+          <summary>如何开始一幅涂色作品？</summary>
+          <div class="answer">
+            <p>在首页选择可爱动物、恐龙世界、海洋朋友等分类，再选择喜欢的线稿即可进入涂色页面。右侧可以切换填色、马克笔、铅笔、画刷、喷枪、蜡笔和图案工具，中间色带用于选择颜色或底纹。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>退出后，涂色进度还会保留吗？</summary>
+          <div class="answer">
+            <p>涂色进度会自动保存在当前设备本地。再次进入同一张线稿时，可以继续上次的创作。卸载 App 会删除保存在 App 本地的进度和作品。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>怎样撤销或重新开始？</summary>
+          <div class="answer">
+            <p>可以使用涂色页面上的撤销按钮返回上一步。点击重置后，可以清除当前线稿的涂色内容并重新开始。</p>
+          </div>
+        </details>
+
+        <details id="photos">
+          <summary>为什么作品无法保存到系统相册？</summary>
+          <div class="answer">
+            <ol>
+              <li>确认点击保存时已允许“布兜学画画”添加照片。</li>
+              <li>如果之前拒绝了权限，请打开 iPad“设置”，找到“布兜学画画”，允许添加照片。</li>
+              <li>确认设备有足够的可用存储空间，然后重新保存。</li>
+            </ol>
+            <p>本 App 只申请向相册添加作品，不会读取或扫描相册中的其他照片。</p>
+          </div>
+        </details>
+
+        <details id="sound">
+          <summary>为什么听不到背景音乐或操作音效？</summary>
+          <div class="answer">
+            <ol>
+              <li>点击首页右上角设置按钮，确认“背景音乐”和“音效”开关已经打开。</li>
+              <li>检查设备音量，并确认没有连接到其他蓝牙音频设备。</li>
+              <li>如果其他 App 正在播放声音，系统可能会优先播放其他音频。</li>
+            </ol>
+            <p>背景音乐和操作音效可以分别开启或关闭。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>如何删除已经保存的作品？</summary>
+          <div class="answer">
+            <p>可以在作品页面删除单幅作品，也可以在 App 设置中清除全部作品。已经保存到系统相册的副本需要在“照片”App 中单独删除。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>App 是否需要联网或注册账号？</summary>
+          <div class="answer">
+            <p>核心涂色功能无需联网，也不需要注册或登录账号。作品、涂色进度和偏好设置默认只保存在当前设备本地。</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section aria-labelledby="privacy-title">
+      <h2 id="privacy-title">隐私与安全</h2>
+      <div class="privacy-row">
+        <p>了解布兜学画画如何保护儿童隐私以及处理设备本地数据。</p>
+        <a class="button-link" href="privacy.html">查看隐私政策</a>
+      </div>
+    </section>
+
+    <section aria-labelledby="contact-title">
+      <h2 id="contact-title">联系我们</h2>
+      <div class="contact">
+        <p><strong>应用名称：</strong>布兜学画画</p>
+        <p><strong>当前版本：</strong>1.0.0</p>
+        <p><strong>运营主体：</strong>Qi Yuan</p>
+        <p><strong>技术支持邮箱：</strong><a href="mailto:410869924@qq.com?subject=布兜学画画技术支持">410869924@qq.com</a></p>
+        <p>发送邮件时，请说明设备型号、iPadOS 版本、App 版本、遇到问题的操作步骤，并尽量附上不包含个人敏感信息的截图，以便我们定位问题。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>© 2026 Qi Yuan · 布兜学画画</p>
+    </div>
+  </footer>
+</body>
+</html>
