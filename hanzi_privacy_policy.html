@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="referrer" content="no-referrer">
+<link rel="alternate" hreflang="zh-Hans" href="hanzi_privacy_policy.html">
+<link rel="alternate" hreflang="en" href="hanzi_privacy_policy_en.html">
+<link rel="alternate" hreflang="ja" href="hanzi_privacy_policy_ja.html">
 <title>隐私政策 · 汉字拆拆乐</title>
 <style>
   :root {
@@ -71,6 +74,26 @@
     content: " · ";
     margin: 0 4px;
     color: var(--border);
+  }
+  .language-nav {
+    display: flex;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .language-nav a {
+    padding: 5px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-decoration: none;
+  }
+  .language-nav a[aria-current="page"] {
+    border-color: var(--primary);
+    background: var(--primary);
+    color: #fff;
   }
 
   .summary {
@@ -260,6 +283,11 @@
       <span>发布日期 2026-06-03</span>
       <span>生效日期 2026-06-03</span>
     </p>
+    <nav class="language-nav" aria-label="语言选择">
+      <a href="hanzi_privacy_policy.html" lang="zh-Hans" aria-current="page">中文</a>
+      <a href="hanzi_privacy_policy_en.html" lang="en">English</a>
+      <a href="hanzi_privacy_policy_ja.html" lang="ja">日本語</a>
+    </nav>
   </header>
 
   <div class="summary">
