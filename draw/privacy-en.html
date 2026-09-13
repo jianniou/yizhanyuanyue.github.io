@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#159fe8">
+  <meta name="description" content="Budou privacy policy">
+  <title>Privacy Policy | Budou</title>
+  <style>
+    :root {
+      --blue: #159fe8;
+      --blue-dark: #075985;
+      --ink: #203044;
+      --muted: #5f7185;
+      --line: #d8e8f2;
+      --surface: #ffffff;
+      --soft-blue: #eef9ff;
+      --soft-green: #effbea;
+      --green: #3f9b45;
+      --orange: #ff9f1c;
+      --pink: #f05d8b;
+      --purple: #8b68d8;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #f7fbfd;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      font-size: 16px;
+      line-height: 1.8;
+      letter-spacing: 0;
+    }
+
+    a { color: #0879b9; }
+    a:hover { color: var(--blue-dark); }
+
+    .skip-link {
+      position: fixed;
+      top: 8px;
+      left: 8px;
+      z-index: 10;
+      padding: 8px 12px;
+      color: #fff;
+      background: var(--blue-dark);
+      transform: translateY(-150%);
+    }
+
+    .skip-link:focus { transform: translateY(0); }
+
+    header {
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background: var(--blue);
+      border-bottom: 8px solid #ffcf33;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      right: -44px;
+      bottom: -66px;
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      background: #73d54a;
+      box-shadow: -170px 52px 0 #ffcf33, -320px 76px 0 #f36b93;
+      opacity: .96;
+    }
+
+    .header-inner,
+    main,
+    .footer-inner {
+      width: min(920px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .header-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      min-height: 230px;
+      padding: 36px 0 44px;
+    }
+
+    .app-icon {
+      width: 112px;
+      height: 112px;
+      flex: 0 0 auto;
+      border: 5px solid rgba(255, 255, 255, .92);
+      border-radius: 24px;
+      object-fit: cover;
+      box-shadow: 0 10px 24px rgba(3, 74, 116, .25);
+    }
+
+    h1, h2, h3 { margin-top: 0; line-height: 1.35; }
+
+    h1 {
+      margin-bottom: 8px;
+      font-size: clamp(32px, 6vw, 48px);
+      font-weight: 800;
+    }
+
+    .app-name {
+      margin: 0 0 6px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .meta {
+      margin: 0;
+      color: rgba(255, 255, 255, .9);
+      font-size: 14px;
+    }
+
+    main { padding: 36px 0 64px; }
+
+    .summary {
+      margin-bottom: 30px;
+      padding: 22px 24px;
+      background: var(--soft-green);
+      border-left: 6px solid var(--green);
+      border-radius: 8px;
+    }
+
+    .summary strong { color: #236f31; }
+
+    nav {
+      margin-bottom: 34px;
+      padding: 20px 24px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    nav h2 { margin-bottom: 12px; font-size: 20px; }
+
+    nav ul {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 24px;
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    section {
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+      scroll-margin-top: 16px;
+    }
+
+    section:first-of-type { border-top: 0; }
+
+    h2 {
+      margin-bottom: 14px;
+      color: var(--blue-dark);
+      font-size: 25px;
+    }
+
+    h3 {
+      margin: 24px 0 8px;
+      color: #34495e;
+      font-size: 18px;
+    }
+
+    p { margin: 0 0 14px; }
+
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+
+    li + li { margin-top: 8px; }
+
+    .data-table-wrap {
+      overflow-x: auto;
+      margin: 18px 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    table {
+      width: 100%;
+      min-width: 620px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 14px 16px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th {
+      color: var(--blue-dark);
+      background: var(--soft-blue);
+      font-weight: 700;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .notice {
+      margin: 18px 0;
+      padding: 18px 20px;
+      background: #fff8e8;
+      border-left: 5px solid var(--orange);
+      border-radius: 8px;
+    }
+
+    .children {
+      padding: 24px;
+      background: #fff3f8;
+      border: 1px solid #f6c8d8;
+      border-radius: 8px;
+    }
+
+    .contact {
+      padding: 22px 24px;
+      background: var(--soft-blue);
+      border: 1px solid #bfe4f7;
+      border-radius: 8px;
+    }
+
+    .contact p:last-child { margin-bottom: 0; }
+
+    footer {
+      color: #eaf7ff;
+      background: #17445f;
+    }
+
+    .footer-inner {
+      padding: 24px 0;
+      font-size: 14px;
+    }
+
+    .footer-inner p { margin: 0; }
+
+    @media (max-width: 640px) {
+      .header-inner,
+      main,
+      .footer-inner { width: min(100% - 28px, 920px); }
+
+      .header-inner {
+        align-items: flex-start;
+        min-height: 210px;
+        padding-top: 30px;
+      }
+
+      .app-icon {
+        width: 76px;
+        height: 76px;
+        border-radius: 18px;
+      }
+
+      header::after { opacity: .55; }
+      nav ul { grid-template-columns: 1fr; }
+      section { padding: 25px 0; }
+      h2 { font-size: 22px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header>
+    <div class="header-inner">
+      <img class="app-icon" src="app-icon.png" alt="Budou app icon">
+      <div>
+        <p class="app-name">Budou</p>
+        <h1>Privacy Policy</h1>
+        <p class="meta">Effective: July 14, 2026　Last updated: July 14, 2026</p>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="summary">
+      <strong>In short:</strong>Budou requires no account, contains no ads, and does not track users. Drawings, coloring progress and preferences stay on your device by default and are never uploaded to our servers. Nothing leaves the device unless you actively choose to save or share a piece of artwork.</div>
+
+    <nav aria-label="隐私政策目录">
+      <h2>Contents</h2>
+      <ul>
+        <li><a href="#scope">Scope</a></li>
+        <li><a href="#data">How we handle data</a></li>
+        <li><a href="#permissions">System permissions</a></li>
+        <li><a href="#sharing">Sharing and disclosure</a></li>
+        <li><a href="#storage">Storage and deletion</a></li>
+        <li><a href="#children">Children's privacy</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#rights">Your rights</a></li>
+        <li><a href="#changes">Changes to this policy</a></li>
+        <li><a href="#contact">Contact us</a></li>
+      </ul>
+    </nav>
+
+    <section id="scope">
+      <h2>1. Scope</h2>
+      <p>This Privacy Policy applies to the Budou app operated by<strong>Qi Yuan</strong> ("we", "us"), and explains how we handle information when providing drawing, coloring, artwork saving and sharing features for children.</p>
+      <p>We ask that a parent or guardian read and understand this policy together with the child before use, and supervise the child's use after agreeing to it.</p>
+    </section>
+
+    <section id="data">
+      <h2>2. How we handle data</h2>
+      <p>The app's core features work offline. We do not require registration or sign-in, and we do not ask for names, phone numbers, email addresses, identity documents or any other identifying information. The app integrates no advertising, behavioural analytics or third-party tracking SDKs.</p>
+
+      <div class="data-table-wrap" role="region" aria-label="数据处理说明" tabindex="0">
+        <table>
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Purpose</th>
+              <th>How it is handled</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Drawings and coloured artwork</td>
+              <td>Displaying, continuing to edit, and managing artwork</td>
+              <td>Stored only on the device</td>
+            </tr>
+            <tr>
+              <td>Coloring progress and artwork details</td>
+              <td>Restoring progress; showing artwork titles and creation dates</td>
+              <td>Stored only on the device</td>
+            </tr>
+            <tr>
+              <td>Age mode, sound and haptics preferences</td>
+              <td>Presenting an age-appropriate interface and remembering settings</td>
+              <td>Stored only on the device</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>None of the above is uploaded to our servers by the app, so it is not data we collect from the device. The App Store, iOS itself, or other services you actively choose may process information under their own rules; that processing is outside our control.</p>
+    </section>
+
+    <section id="permissions">
+      <h2>3. System permissions</h2>
+      <h3>Photo library (add-only)</h3>
+      <p>When you tap "Save to Photos", the app requests<strong>add-only</strong> access to your photo library in order to write the current artwork to it. This permission does not allow the app to read, scan or upload any other photos.</p>
+      <p>Declining does not affect drawing, coloring or managing artwork on the device — it only means artwork cannot be saved to the system photo library. You can change this permission at any time in iOS Settings.</p>
+
+      <div class="notice">The app does not request location, contacts, camera, microphone, or cross-app tracking permissions.</div>
+    </section>
+
+    <section id="sharing">
+      <h2>4. Sharing, transfer and disclosure</h2>
+      <p>We do not sell, rent, trade or otherwise provide personal information to third parties, and we do not upload artwork to our servers.</p>
+      <p>When you tap "Share", the app opens the iOS share sheet. The selected artwork is passed to another service only after you choose a recipient or app and confirm. How that service handles the data is governed by its own privacy policy. We recommend that children use sharing under a parent's or guardian's supervision, and avoid sharing anything containing personal details such as names, addresses or schools.</p>
+      <p>We do not publicly disclose user information unless required by law, or where necessary to protect the safety or property of users or the public.</p>
+    </section>
+
+    <section id="storage">
+      <h2>5. Storage and deletion</h2>
+      <ul>
+        <li>Artwork, coloring progress and preferences are stored in the app's local storage on the device.</li>
+        <li>You can delete individual pieces from the artwork screen, or clear all artwork in the app's Settings.</li>
+        <li>Uninstalling the app normally removes the artwork, progress and settings held in its local storage.</li>
+        <li>Copies already saved to the system photo library or shared through a third-party service are not removed by deleting them in the app or uninstalling it; you need to delete those in the Photos app or the relevant service yourself.</li>
+      </ul>
+    </section>
+
+    <section id="children">
+      <div class="children">
+        <h2>6. Children's privacy</h2>
+        <p>This app is intended for children. We follow the principle of data minimisation: children are not asked to create an account, and we do not collect identity information, contact details, location, device identifiers or behavioural analytics. We show no personalised advertising and perform no cross-app tracking.</p>
+        <p>Children under the age of digital consent in their jurisdiction (13 in the United States under COPPA; 13–16 in the EEA under GDPR; 14 in mainland China) should use this app with a parent or guardian present. Parents and guardians should help children use the save and share features appropriately, and should not allow children to disclose sensitive personal information through artwork or third-party sharing channels.</p>
+        <p>If a parent or guardian believes a child has improperly disclosed personal information through features of this app, please contact us using the details at the end of this policy. For anything within our control, we will assist in accordance with applicable law once the situation is verified.</p>
+      </div>
+    </section>
+
+    <section id="security">
+      <h2>7. Security</h2>
+      <p>We protect privacy by processing as little data as possible, preferring on-device storage, and requesting only the minimum permission a feature needs. Please keep your device secure and use the system lock. Any processing that results from you actively passing artwork to a third party through the share sheet is that third party's responsibility under its own rules.</p>
+    </section>
+
+    <section id="rights">
+      <h2>8. Your rights</h2>
+      <p>Users and their guardians can manage this information by:</p>
+      <ul>
+        <li>viewing or deleting locally stored artwork on the artwork screen;</li>
+        <li>clearing all artwork in the app's Settings;</li>
+        <li>withdrawing or changing the photo library permission in iOS Settings;</li>
+        <li>uninstalling the app to remove information held in its local storage;</li>
+        <li>emailing us at the address below with questions or privacy requests.</li>
+      </ul>
+      <p>Because the app has no accounts and uploads no user data to our servers, we generally cannot look up, export or delete server-side data for a specific user — there is none.</p>
+    </section>
+
+    <section id="changes">
+      <h2>9. Changes to this policy</h2>
+      <p>We may update this policy when the app's features, our data practices, or applicable law change. An updated policy will carry a new "last updated" date. If a change materially affects users' rights, we will notify users or their guardians by appropriate means. We will not reduce the level of protection this policy gives to children's personal information without guardian consent.</p>
+    </section>
+
+    <section id="contact">
+      <h2>10. Contact us</h2>
+      <div class="contact">
+        <p><strong>Operator: </strong>Qi Yuan</p>
+        <p><strong>App name: </strong>Budou</p>
+        <p><strong>Email: </strong><a href="mailto:410869924@qq.com">410869924@qq.com</a></p>
+        <p>If you have questions, comments or requests about this policy, children's privacy, or how we handle data, please email us at the address above. We will verify the situation and respond within the period required by applicable law.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>© 2026 Qi Yuan · Budou</p>
+    </div>
+  </footer>
+</body>
+</html>
